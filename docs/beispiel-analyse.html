@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Beispiel-Analyse | Self-learning material book</title>
+  <meta name="description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Beispiel-Analyse | Self-learning material book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Beispiel-Analyse | Self-learning material book" />
+  
+  <meta name="twitter:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
+  
+
+<meta name="author" content="Prof. Berenike Herrmann, Prof. Oliver Böhm-Kasper, Quy-Sing Glindemann-Tsan" />
+
+
+<meta name="date" content="2022-10-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"/>
+<link rel="next" href="freq_table_analysis.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#cop"><i class="fa fa-check"></i><b>1.1</b> CoP</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#einleitung-zur-selbstlerneinheit"><i class="fa fa-check"></i><b>1.2</b> Einleitung zur Selbstlerneinheit</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#typographische-konvention"><i class="fa fa-check"></i><b>1.3</b> Typographische Konvention</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.3.1</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#quelleweiterführende-information"><i class="fa fa-check"></i><b>1.4</b> Quelle/weiterführende Information</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#feedback-1"><i class="fa fa-check"></i><b>1.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro-twitter.html"><a href="intro-twitter.html"><i class="fa fa-check"></i><b>2</b> Einführung in Social Media - Twitter</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro-twitter.html"><a href="intro-twitter.html#was-ist-twitter"><i class="fa fa-check"></i><b>2.1</b> Was ist Twitter?</a></li>
+<li class="chapter" data-level="2.2" data-path="intro-twitter.html"><a href="intro-twitter.html#umfrage-welche-social-media-nutzt-du"><i class="fa fa-check"></i><b>2.2</b> Umfrage: Welche Social Media nutzt du?</a></li>
+<li class="chapter" data-level="2.3" data-path="intro-twitter.html"><a href="intro-twitter.html#ergebnis-der-umfrage-im-seminar"><i class="fa fa-check"></i><b>2.3</b> Ergebnis der Umfrage im Seminar:</a></li>
+<li class="chapter" data-level="2.4" data-path="intro-twitter.html"><a href="intro-twitter.html#quelleweiterführende-information-1"><i class="fa fa-check"></i><b>2.4</b> Quelle/weiterführende Information</a></li>
+<li class="chapter" data-level="2.5" data-path="intro-twitter.html"><a href="intro-twitter.html#feedback-2"><i class="fa fa-check"></i><b>2.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html"><i class="fa fa-check"></i><b>3</b> Einführung in RStudio (Cloud)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#zugang"><i class="fa fa-check"></i><b>3.1</b> Zugang</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#aufgabe"><i class="fa fa-check"></i><b>3.1.1</b> Aufgabe</a></li>
+<li class="chapter" data-level="3.1.2" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#aufgabe-1"><i class="fa fa-check"></i><b>3.1.2</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#erste-schritte"><i class="fa fa-check"></i><b>3.2</b> Erste Schritte</a></li>
+<li class="chapter" data-level="3.3" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#knowledge-check"><i class="fa fa-check"></i><b>3.3</b> Knowledge-Check</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#ergänzende-video-tutorials-zum-rstudio-handling"><i class="fa fa-check"></i><b>3.3.1</b> Ergänzende Video-Tutorials zum RStudio-Handling</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#feedback-3"><i class="fa fa-check"></i><b>3.4</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="einführung-in-die-twitter-api.html"><a href="einführung-in-die-twitter-api.html"><i class="fa fa-check"></i><b>4</b> Einführung in die Twitter API</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="einführung-in-die-twitter-api.html"><a href="einführung-in-die-twitter-api.html#twitter-api"><i class="fa fa-check"></i><b>4.1</b> Twitter API</a></li>
+<li class="chapter" data-level="4.2" data-path="einführung-in-die-twitter-api.html"><a href="einführung-in-die-twitter-api.html#feedback-4"><i class="fa fa-check"></i><b>4.2</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html"><i class="fa fa-check"></i><b>5</b> Organisation des virtuellen Workplace</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#workplace_prep"><i class="fa fa-check"></i><b>5.1</b> Vorschlag für die Arbeitsorganisation</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#rstudio"><i class="fa fa-check"></i><b>5.1.1</b> RStudio</a></li>
+<li class="chapter" data-level="5.1.2" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#rstudio-cloud"><i class="fa fa-check"></i><b>5.1.2</b> RStudio Cloud</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#feedback-5"><i class="fa fa-check"></i><b>5.2</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><i class="fa fa-check"></i><b>6</b> Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen”</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#workspace-erstellen"><i class="fa fa-check"></i><b>6.1</b> Workspace erstellen</a></li>
+<li class="chapter" data-level="6.2" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#authentifizierung"><i class="fa fa-check"></i><b>6.2</b> Authentifizierung</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#einlesen-von-notwendigen-paketen"><i class="fa fa-check"></i><b>6.2.1</b> Einlesen von notwendigen Paketen</a></li>
+<li class="chapter" data-level="6.2.2" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#erstellen-eines-authentifikations-token"><i class="fa fa-check"></i><b>6.2.2</b> Erstellen eines Authentifikations-Token</a></li>
+<li class="chapter" data-level="6.2.3" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#einlesen-von-twitter-daten"><i class="fa fa-check"></i><b>6.2.3</b> Einlesen von Twitter-Daten</a></li>
+<li class="chapter" data-level="6.2.4" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#ergebnisse"><i class="fa fa-check"></i><b>6.2.4</b> Ergebnisse</a></li>
+<li class="chapter" data-level="6.2.5" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#abspeichern"><i class="fa fa-check"></i><b>6.2.5</b> Abspeichern</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#fingerübung"><i class="fa fa-check"></i><b>6.3</b> Fingerübung</a></li>
+<li class="chapter" data-level="6.4" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#quelle"><i class="fa fa-check"></i><b>6.4</b> Quelle</a></li>
+<li class="chapter" data-level="6.5" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#feedback-6"><i class="fa fa-check"></i><b>6.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html"><i class="fa fa-check"></i><b>7</b> Beispiel-Analyse</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#workplace-authentifizierung-twitter"><i class="fa fa-check"></i><b>7.1</b> Workplace &amp; Authentifizierung Twitter</a></li>
+<li class="chapter" data-level="7.2" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#tweets-suche"><i class="fa fa-check"></i><b>7.2</b> Tweets-Suche</a></li>
+<li class="chapter" data-level="7.3" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#häufigste-user-der-hashtags-bielefeld-oder-bielefeld"><i class="fa fa-check"></i><b>7.3</b> Häufigste User der Hashtags #Bielefeld oder #bielefeld</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#visualisierung-der-daten"><i class="fa fa-check"></i><b>7.3.1</b> Visualisierung der Daten:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#quelle-1"><i class="fa fa-check"></i><b>7.4</b> Quelle</a></li>
+<li class="chapter" data-level="7.5" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#feedback-7"><i class="fa fa-check"></i><b>7.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html"><i class="fa fa-check"></i><b>8</b> Zweite Lerneinheit - Twitter Analyse: Häufigkeitstabelle &amp; Wordcloud</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#vorbereitung"><i class="fa fa-check"></i><b>8.1</b> Vorbereitung</a></li>
+<li class="chapter" data-level="8.2" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#twitter-suche"><i class="fa fa-check"></i><b>8.2</b> Twitter Suche</a></li>
+<li class="chapter" data-level="8.3" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-pre-processing-cleaning"><i class="fa fa-check"></i><b>8.3</b> Data Pre-Processing: Cleaning</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#aufgabe-2"><i class="fa fa-check"></i><b>8.3.1</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-pre-processing-transformieren"><i class="fa fa-check"></i><b>8.4</b> Data Pre-Processing: Transformieren</a></li>
+<li class="chapter" data-level="8.5" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-visualization-häufigkeitstabelle"><i class="fa fa-check"></i><b>8.5</b> Data Visualization: Häufigkeitstabelle</a></li>
+<li class="chapter" data-level="8.6" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#eigene-stopwörter-erstellen"><i class="fa fa-check"></i><b>8.6</b> Eigene Stopwörter erstellen</a></li>
+<li class="chapter" data-level="8.7" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-visualization-word-cloud"><i class="fa fa-check"></i><b>8.7</b> Data Visualization: Word-Cloud</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#aufgabe-3"><i class="fa fa-check"></i><b>8.7.1</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#quelle-2"><i class="fa fa-check"></i><b>8.8</b> Quelle</a></li>
+<li class="chapter" data-level="8.9" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#feedback-8"><i class="fa fa-check"></i><b>8.9</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html"><i class="fa fa-check"></i><b>9</b> Dritte Lerneinheit - Sentimentanalyse: Teil 1</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html#aufgabe-4"><i class="fa fa-check"></i><b>9.1</b> Aufgabe</a></li>
+<li class="chapter" data-level="9.2" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html#knowledge-check-1"><i class="fa fa-check"></i><b>9.2</b> Knowledge-Check</a></li>
+<li class="chapter" data-level="9.3" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html#feedback-9"><i class="fa fa-check"></i><b>9.3</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html"><i class="fa fa-check"></i><b>10</b> Dritte Lerneinheit - Sentimentanalyse: Teil 2</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#aufgabe-5"><i class="fa fa-check"></i><b>10.1</b> Aufgabe</a></li>
+<li class="chapter" data-level="10.2" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#vorbereitung-1"><i class="fa fa-check"></i><b>10.2</b> Vorbereitung</a></li>
+<li class="chapter" data-level="10.3" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#groß--und-kleinschreibung"><i class="fa fa-check"></i><b>10.3</b> Groß- und Kleinschreibung</a></li>
+<li class="chapter" data-level="10.4" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#ergebnis-des-data-pre-processing"><i class="fa fa-check"></i><b>10.4</b> Ergebnis des Data Pre-Processing</a></li>
+<li class="chapter" data-level="10.5" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#lexikonwörterbuch"><i class="fa fa-check"></i><b>10.5</b> Lexikon/Wörterbuch</a></li>
+<li class="chapter" data-level="10.6" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#ergänzung-der-positiven-und-negativen-sentiments"><i class="fa fa-check"></i><b>10.6</b> Ergänzung der positiven und negativen Sentiments</a></li>
+<li class="chapter" data-level="10.7" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#sentimentanalyse"><i class="fa fa-check"></i><b>10.7</b> Sentimentanalyse</a></li>
+<li class="chapter" data-level="10.8" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#visualisierung-sentimentanalyse"><i class="fa fa-check"></i><b>10.8</b> Visualisierung Sentimentanalyse</a></li>
+<li class="chapter" data-level="10.9" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#sentiment-score"><i class="fa fa-check"></i><b>10.9</b> Sentiment-Score</a></li>
+<li class="chapter" data-level="10.10" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#word-cloud"><i class="fa fa-check"></i><b>10.10</b> Word-Cloud</a></li>
+<li class="chapter" data-level="10.11" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#feedback-10"><i class="fa fa-check"></i><b>10.11</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html"><i class="fa fa-check"></i><b>11</b> Abschluss Aufgabe</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html#inhalt"><i class="fa fa-check"></i><b>11.1</b> Inhalt</a></li>
+<li class="chapter" data-level="11.2" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html#einführung-in-rmarkdown"><i class="fa fa-check"></i><b>11.2</b> Einführung in RMarkdown</a></li>
+<li class="chapter" data-level="11.3" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html#feedback-11"><i class="fa fa-check"></i><b>11.3</b> Feedback</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Self-learning material book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="beispiel-analyse" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Beispiel-Analyse<a href="beispiel-analyse.html#beispiel-analyse" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In diesem Kapitel werden die Tweets mit dem Hashtag #Bielefeld respektive #bielefeld untersucht und visualisiert.</p>
+<div class="task-box task-img">
+<ol style="list-style-type: decimal">
+<li>Setzt dich mit dem Kapitel auseinander</li>
+<li>Such dir einen Hashtag aus und führe die Methoden und Funktionen für diesen Hashtag wie in diesem Kapitel aus</li>
+</ol>
+</div>
+<p>Der Sinn dieser Übung ist es, die Programmiersprache R respektive RStudio kennenzulernen.</p>
+<div id="workplace-authentifizierung-twitter" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Workplace &amp; Authentifizierung Twitter<a href="beispiel-analyse.html#workplace-authentifizierung-twitter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>An dieser Stelle wird nur auf die Herstellung des virtuellen Workplaces hingewiesen. Des Weiteren benutzen wir nun mithilfe der Funktion ’auth_as(“Meine APP”)’die vereinfachte Authentifikations-Methode; ohne Zugangsinformationen eingeben zu müssen. Zunächst wird das notwendige Paket rtweet eingelesen.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="beispiel-analyse.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Einlesen des notwendigen Packages</span></span>
+<span id="cb14-2"><a href="beispiel-analyse.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtweet)</span>
+<span id="cb14-3"><a href="beispiel-analyse.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="beispiel-analyse.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">auth_as</span>(<span class="st">&quot;Meine App&quot;</span>)</span></code></pre></div>
+</details>
+</div>
+<div id="tweets-suche" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Tweets-Suche<a href="beispiel-analyse.html#tweets-suche" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Wir speichern die Tweets in dem Objekt “Bielefeld_tweets” ab. Die Analyse und die Visualierung basiert auf dem Objekt, der die notwendigen Daten enthält.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="beispiel-analyse.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abruf von Tweets unter den Hashtags #Bielefeld oder #bielefeld</span></span>
+<span id="cb15-2"><a href="beispiel-analyse.html#cb15-2" aria-hidden="true" tabindex="-1"></a>Bielefeld_tweets <span class="ot">&lt;-</span> <span class="fu">search_tweets</span>(<span class="st">&quot;#Bielefeld OR #bielefeld&quot;</span>, <span class="at">n=</span><span class="dv">9000</span>, <span class="co">#Suche nach Tweets #Bielefeld oder #bielefeld, max. 9000 Tweets</span></span>
+<span id="cb15-3"><a href="beispiel-analyse.html#cb15-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">lang =</span> <span class="st">&quot;de&quot;</span>, <span class="co">#Sprache der Tweets: Deutsch</span></span>
+<span id="cb15-4"><a href="beispiel-analyse.html#cb15-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_rts =</span> <span class="cn">TRUE</span>) <span class="co">#Retweets sollen inkludiert sein</span></span></code></pre></div>
+</details>
+</div>
+<div id="häufigste-user-der-hashtags-bielefeld-oder-bielefeld" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Häufigste User der Hashtags #Bielefeld oder #bielefeld<a href="beispiel-analyse.html#häufigste-user-der-hashtags-bielefeld-oder-bielefeld" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um die zehn häufigsten User aus dem Datensatz zu erhalten, wird zur Vereinfachung des Programmierens das Paket <code>tidyverse</code> benutzt. Das Paket bietet die Möglichkeit direkt über den Code einen leserfreundlicheren (&amp; besser nachvollziehbaren) Code zu erstellen, ohne viel kommentieren zu müssen. Für die Auflistung der häufigsten User sind die Account-Namen notwendig, die über die Funktion ‘users_data(Bielefeld_tweets)’ eingeholt werden. Dies wird in dem Objekt ‘tweets_bi’ abgespeichert.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="beispiel-analyse.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Notwendiges Paket für die pipe &quot; %&gt;% &quot;-Programmierung</span></span>
+<span id="cb16-2"><a href="beispiel-analyse.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (tidyverse)</span>
+<span id="cb16-3"><a href="beispiel-analyse.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="beispiel-analyse.html#cb16-4" aria-hidden="true" tabindex="-1"></a>tweets_bi <span class="ot">&lt;-</span> <span class="fu">users_data</span>(Bielefeld_tweets) <span class="co">#u.a. die Daten zum Accout-Namen einholen</span></span>
+<span id="cb16-5"><a href="beispiel-analyse.html#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="beispiel-analyse.html#cb16-6" aria-hidden="true" tabindex="-1"></a>tweets_bi <span class="sc">%&gt;%</span> <span class="co">#Zugriff auf Daten mit #Bielefeld-Tweets</span></span>
+<span id="cb16-7"><a href="beispiel-analyse.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span> (name) <span class="sc">%&gt;%</span>   <span class="co">#Anzahl der Twitter-Nutzer-Namen</span></span>
+<span id="cb16-8"><a href="beispiel-analyse.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span>      <span class="co">#Top 10 werden ausgewählt</span></span>
+<span id="cb16-9"><a href="beispiel-analyse.html#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))   <span class="co">#in absteigender Reihenfolge ausgeben</span></span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 12 × 2
+##    name                                         n
+##    &lt;chr&gt;                                    &lt;int&gt;
+##  1 eurobahn                                   286
+##  2 (Kurzfristiger) Personalausfall            122
+##  3 zuginfo.nrw                                 94
+##  4 Tempo-Team Personaldienstleistungen GmbH    17
+##  5 Polizei NRW BI                              16
+##  6 Neue Westfälische                           14
+##  7 Fuchsbaubewohner 🦊                          7
+##  8 iranprotestsgermany                          6
+##  9 LOUISEXYZJEANS VON DE RÖYAL                  6
+## 10 ███.dissent.is/████████████                  5
+## 11 Antinationale Linke Bielefeld                5
+## 12 Michael Gugat                                5</code></pre>
+<div id="visualisierung-der-daten" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Visualisierung der Daten:<a href="beispiel-analyse.html#visualisierung-der-daten" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="über-eine-tabelle-mit-dem-paket-gt" class="section level4 hasAnchor" number="7.3.1.1">
+<h4><span class="header-section-number">7.3.1.1</span> Über eine Tabelle mit dem Paket <em>gt</em><a href="beispiel-analyse.html#über-eine-tabelle-mit-dem-paket-gt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Um eine ansprechendere Visualisierung zu generieren, nutzen wir das Paket <code>gt</code>. Dafür ist das Paket zu installieren:</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="beispiel-analyse.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;gt&quot;</span>)</span></code></pre></div>
+</details>
+<p>Anschließend wird das Paket eingelesen und die Tabelle wird erstellt. Die Dokumentation zu dem Paket sind optional <a href="https://gt.rstudio.com/">hier</a> nachzulesen.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="beispiel-analyse.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Notwendiges Paket für gt-Tables</span></span>
+<span id="cb19-2"><a href="beispiel-analyse.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (gt) </span>
+<span id="cb19-3"><a href="beispiel-analyse.html#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="beispiel-analyse.html#cb19-4" aria-hidden="true" tabindex="-1"></a>tweets_bi <span class="sc">%&gt;%</span> </span>
+<span id="cb19-5"><a href="beispiel-analyse.html#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span> (name) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-6"><a href="beispiel-analyse.html#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-7"><a href="beispiel-analyse.html#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-8"><a href="beispiel-analyse.html#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span>  <span class="co">#Erzeugung der Tabelle</span></span>
+<span id="cb19-9"><a href="beispiel-analyse.html#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span> ( <span class="co">#&quot;Kopf&quot; der Tabelle layouten</span></span>
+<span id="cb19-10"><a href="beispiel-analyse.html#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&quot;Häufigste User des Hashtags #Bielefeld oder #bielefeld&quot;</span>, <span class="co">#Tabellen-Titel</span></span>
+<span id="cb19-11"><a href="beispiel-analyse.html#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">&quot;Absolute Anzahl&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># Untertitel</span></span>
+<span id="cb19-12"><a href="beispiel-analyse.html#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">name =</span> <span class="st">&quot;Twitter-Nutzer-Name&quot;</span>, <span class="at">n =</span> <span class="st">&quot;Anzahl der Tweets&quot;</span>) <span class="sc">%&gt;%</span> <span class="co">#Beschriftung der Spalten</span></span>
+<span id="cb19-13"><a href="beispiel-analyse.html#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb19-14"><a href="beispiel-analyse.html#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span>  <span class="fu">paste</span>(<span class="st">&quot;Source: Data collected from TwitterAPI via rtweet-package &quot;</span>,<span class="fu">Sys.Date</span>())</span>
+<span id="cb19-15"><a href="beispiel-analyse.html#cb19-15" aria-hidden="true" tabindex="-1"></a>    ) <span class="co">#Angabe der Quellen</span></span></code></pre></div>
+</details>
+<div id="bckolvvyoc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#bckolvvyoc .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bckolvvyoc .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bckolvvyoc .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bckolvvyoc .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bckolvvyoc .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bckolvvyoc .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bckolvvyoc .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bckolvvyoc .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bckolvvyoc .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bckolvvyoc .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bckolvvyoc .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bckolvvyoc .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bckolvvyoc .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bckolvvyoc .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bckolvvyoc .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bckolvvyoc .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bckolvvyoc .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bckolvvyoc .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bckolvvyoc .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bckolvvyoc .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bckolvvyoc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bckolvvyoc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bckolvvyoc .gt_left {
+  text-align: left;
+}
+
+#bckolvvyoc .gt_center {
+  text-align: center;
+}
+
+#bckolvvyoc .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bckolvvyoc .gt_font_normal {
+  font-weight: normal;
+}
+
+#bckolvvyoc .gt_font_bold {
+  font-weight: bold;
+}
+
+#bckolvvyoc .gt_font_italic {
+  font-style: italic;
+}
+
+#bckolvvyoc .gt_super {
+  font-size: 65%;
+}
+
+#bckolvvyoc .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#bckolvvyoc .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bckolvvyoc .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bckolvvyoc .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bckolvvyoc .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bckolvvyoc .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bckolvvyoc .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="2" class="gt_heading gt_title gt_font_normal" style>Häufigste User des Hashtags #Bielefeld oder #bielefeld</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>Absolute Anzahl</td>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Twitter-Nutzer-Name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Anzahl der Tweets</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">eurobahn</td>
+<td class="gt_row gt_right">286</td></tr>
+    <tr><td class="gt_row gt_left">(Kurzfristiger) Personalausfall</td>
+<td class="gt_row gt_right">122</td></tr>
+    <tr><td class="gt_row gt_left">zuginfo.nrw</td>
+<td class="gt_row gt_right">94</td></tr>
+    <tr><td class="gt_row gt_left">Tempo-Team Personaldienstleistungen GmbH</td>
+<td class="gt_row gt_right">17</td></tr>
+    <tr><td class="gt_row gt_left">Polizei NRW BI</td>
+<td class="gt_row gt_right">16</td></tr>
+    <tr><td class="gt_row gt_left">Neue Westfälische</td>
+<td class="gt_row gt_right">14</td></tr>
+    <tr><td class="gt_row gt_left">Fuchsbaubewohner 🦊</td>
+<td class="gt_row gt_right">7</td></tr>
+    <tr><td class="gt_row gt_left">iranprotestsgermany</td>
+<td class="gt_row gt_right">6</td></tr>
+    <tr><td class="gt_row gt_left">LOUISEXYZJEANS VON DE RÖYAL</td>
+<td class="gt_row gt_right">6</td></tr>
+    <tr><td class="gt_row gt_left">███.dissent.is/████████████</td>
+<td class="gt_row gt_right">5</td></tr>
+    <tr><td class="gt_row gt_left">Antinationale Linke Bielefeld</td>
+<td class="gt_row gt_right">5</td></tr>
+    <tr><td class="gt_row gt_left">Michael Gugat</td>
+<td class="gt_row gt_right">5</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="2">Source: Data collected from TwitterAPI via rtweet-package  2022-10-19</td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+</div>
+<div id="über-ein-diagram-mit-dem-paket-ggplot2" class="section level4 hasAnchor" number="7.3.1.2">
+<h4><span class="header-section-number">7.3.1.2</span> Über ein Diagram mit dem Paket <em>ggplot2</em><a href="beispiel-analyse.html#über-ein-diagram-mit-dem-paket-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Für diese Visualisierung wird das <a href="https://methodenlehre.github.io/einfuehrung-in-R/grafiken-mit-ggplot2.html">Paket</a> <code>ggplot2</code> benötigt, welches zuvorderst eingelesen wird (und wenn notwendig installiert wird).</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="beispiel-analyse.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+</details>
+<p>Die Erstellung und Ausgabe des Diagramms erfolgt in diesem Abschnitt.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="beispiel-analyse.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#notwendiges Paket</span></span>
+<span id="cb21-2"><a href="beispiel-analyse.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-3"><a href="beispiel-analyse.html#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="beispiel-analyse.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Als Graphik</span></span>
+<span id="cb21-5"><a href="beispiel-analyse.html#cb21-5" aria-hidden="true" tabindex="-1"></a>tweets_bi <span class="sc">%&gt;%</span></span>
+<span id="cb21-6"><a href="beispiel-analyse.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(name, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-7"><a href="beispiel-analyse.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-8"><a href="beispiel-analyse.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-9"><a href="beispiel-analyse.html#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span> (<span class="at">x =</span>name, n), <span class="at">y =</span> n)) <span class="sc">+</span> <span class="co">#Erzeugung eines Diagramms</span></span>
+<span id="cb21-10"><a href="beispiel-analyse.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;steelblue4&#39;</span>) <span class="sc">+</span> <span class="co">#Farbe der Balken</span></span>
+<span id="cb21-11"><a href="beispiel-analyse.html#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co">#Diagramm um 90 Grad gedreht</span></span>
+<span id="cb21-12"><a href="beispiel-analyse.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Name&quot;</span>, <span class="co">#Beschriftung der X-Achse</span></span>
+<span id="cb21-13"><a href="beispiel-analyse.html#cb21-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Anzahl&quot;</span>, <span class="co">#Beschriftung der y-Achse</span></span>
+<span id="cb21-14"><a href="beispiel-analyse.html#cb21-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Who is tweeting? &quot;</span>, <span class="co">#Diagrammtitel</span></span>
+<span id="cb21-15"><a href="beispiel-analyse.html#cb21-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;under Hashtag #Bielefeld or #Bielefeld&quot;</span>, <span class="co">#Untertitel des Diagramms</span></span>
+<span id="cb21-16"><a href="beispiel-analyse.html#cb21-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">paste</span>(<span class="st">&quot;Source: Data collected from TwitterAPI via rtweet-package &quot;</span>,<span class="fu">Sys.Date</span>())) <span class="co">#Quellenangabe für Diagramm</span></span></code></pre></div>
+</details>
+<p><img src="_main_files/figure-html/ggplot2_plot-1.png" width="672" /></p>
+<p>In der obigen Darstellung werden die Daten in einem Balkendiagramm präsentiert.
+Es ist auch möglich sich die Anzahl der Tweets pro Tag anzeigen zu lassen. Hier wird das Paket <code>lubridate</code> benötigt, welches installiert und eingelesen wird.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="beispiel-analyse.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#notwendiges Paket</span></span>
+<span id="cb22-2"><a href="beispiel-analyse.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)</span></code></pre></div>
+</details>
+<p>Im Anschluss werden die notwendigen Daten definiert und in einer Zeitreihe durch Balken dargestellt.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="beispiel-analyse.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (lubridate)</span>
+<span id="cb23-2"><a href="beispiel-analyse.html#cb23-2" aria-hidden="true" tabindex="-1"></a>Bielefeld_tweets<span class="sc">$</span>date <span class="ot">=</span> <span class="fu">date</span>(Bielefeld_tweets<span class="sc">$</span>created_at) <span class="co">#Abspeicherung einer neuen Variable Datum</span></span>
+<span id="cb23-3"><a href="beispiel-analyse.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="beispiel-analyse.html#cb23-4" aria-hidden="true" tabindex="-1"></a>Bielefeld_tweets_date <span class="ot">=</span>  <span class="fu">data.frame</span>(<span class="fu">table</span>(Bielefeld_tweets<span class="sc">$</span>date)) <span class="co">#Erzeugung eines neuen Datensatz mit Datum und Anzahl der Tweets</span></span>
+<span id="cb23-5"><a href="beispiel-analyse.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Bielefeld_tweets_date) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Datum&#39;</span>,<span class="st">&#39;Total.Tweets&#39;</span>) <span class="co">#Umbenennung der Variablennamen</span></span>
+<span id="cb23-6"><a href="beispiel-analyse.html#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="beispiel-analyse.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data viz</span></span>
+<span id="cb23-8"><a href="beispiel-analyse.html#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Bielefeld_tweets_date)<span class="sc">+</span> <span class="co">#unterste Ebene des Diagramm erzeugen</span></span>
+<span id="cb23-9"><a href="beispiel-analyse.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> Datum, <span class="co">#Spezifizierung X-Achse</span></span>
+<span id="cb23-10"><a href="beispiel-analyse.html#cb23-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">y =</span> Total.Tweets, <span class="co">#Spezifizierung y-Achse</span></span>
+<span id="cb23-11"><a href="beispiel-analyse.html#cb23-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="fu">I</span>(<span class="st">&#39;cornflowerblue&#39;</span>)), <span class="co">#Farbe der Balken</span></span>
+<span id="cb23-12"><a href="beispiel-analyse.html#cb23-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">&#39;identity&#39;</span>, <span class="co">#Verwendung der absoluten Werte aus dem Data.Frame</span></span>
+<span id="cb23-13"><a href="beispiel-analyse.html#cb23-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">show.legend =</span> <span class="cn">FALSE</span>)<span class="sc">+</span> <span class="co">#keine Legende anzeigen</span></span>
+<span id="cb23-14"><a href="beispiel-analyse.html#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">mean</span>(Bielefeld_tweets_date<span class="sc">$</span>Total.Tweets), <span class="co">#horizontale Linie basierend auf dem Mittelwert der Anzahl an Tweets</span></span>
+<span id="cb23-15"><a href="beispiel-analyse.html#cb23-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">col =</span> (<span class="st">&#39;red&#39;</span>), <span class="co">#Farbe rot</span></span>
+<span id="cb23-16"><a href="beispiel-analyse.html#cb23-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.5</span>)<span class="sc">+</span> <span class="co">#Dicke der Linie</span></span>
+<span id="cb23-17"><a href="beispiel-analyse.html#cb23-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">fontface =</span> <span class="st">&#39;italic&#39;</span>, <span class="co">#kursiver Text</span></span>
+<span id="cb23-18"><a href="beispiel-analyse.html#cb23-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&#39;Mittelwert:&#39;</span>,</span>
+<span id="cb23-19"><a href="beispiel-analyse.html#cb23-19" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ceiling</span>(<span class="fu">mean</span>(Bielefeld_tweets_date<span class="sc">$</span>Total.Tweets)), <span class="co">#Einfügen des automatisch berechneten Mittelwertes</span></span>
+<span id="cb23-20"><a href="beispiel-analyse.html#cb23-20" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&#39;Tweets pro Tag&#39;</span>),</span>
+<span id="cb23-21"><a href="beispiel-analyse.html#cb23-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">x =</span> <span class="dv">1</span>, <span class="co">#Position des Texts auf der X-Achse (erstes Datum)</span></span>
+<span id="cb23-22"><a href="beispiel-analyse.html#cb23-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="fu">mean</span>(Bielefeld_tweets_date<span class="sc">$</span>Total.Tweets)<span class="sc">+</span><span class="dv">20</span>), <span class="co">#Position auf der Y-Achse, +20 über dem ersten Balken</span></span>
+<span id="cb23-23"><a href="beispiel-analyse.html#cb23-23" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="st">&#39;left&#39;</span>, <span class="co">#Textposition links</span></span>
+<span id="cb23-24"><a href="beispiel-analyse.html#cb23-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">4</span>, <span class="co">#Textgröße</span></span>
+<span id="cb23-25"><a href="beispiel-analyse.html#cb23-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">col =</span> (<span class="st">&#39;red&#39;</span>) )<span class="sc">+</span> <span class="co">#Textfarbe</span></span>
+<span id="cb23-26"><a href="beispiel-analyse.html#cb23-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Anzahl der Tweets pro Tag &#39;</span>, <span class="co">#Diagrammtitel</span></span>
+<span id="cb23-27"><a href="beispiel-analyse.html#cb23-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;mit dem Hashtag #Bielefeld oder #bielefeld&#39;</span>, <span class="co">#Untertitel des Diagramms</span></span>
+<span id="cb23-28"><a href="beispiel-analyse.html#cb23-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">paste</span>(<span class="st">&quot;Source: Data collected from TwitterAPI via rtweet-package &quot;</span>,<span class="fu">Sys.Date</span>()))<span class="sc">+</span></span>
+<span id="cb23-29"><a href="beispiel-analyse.html#cb23-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Datum&#39;</span>)<span class="sc">+</span> <span class="co">#Beschriftung x-Achse</span></span>
+<span id="cb23-30"><a href="beispiel-analyse.html#cb23-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Anzahl der Tweets&#39;</span>)<span class="sc">+</span> <span class="co">#Beschriftung y-Achse</span></span>
+<span id="cb23-31"><a href="beispiel-analyse.html#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_bw</span>() <span class="co">#Diagramm-Theme schwarz-weiß</span></span></code></pre></div>
+</details>
+<p><img src="_main_files/figure-html/print_out_timeline_hashtag-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="quelle-1" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Quelle<a href="beispiel-analyse.html#quelle-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/">Zur Homepage des Pakets: ggplot2</a></li>
+<li><a href="https://gt.rstudio.com/">Zur Homepage des Pakets: gt</a></li>
+<li><a href="https://lubridate.tidyverse.org/">Zur Homepage des Pakets: lubridate</a></li>
+<li><a href="https://www.tidyverse.org/">Zur Homepage des Pakets: tidyverse</a></li>
+</ul>
+</div>
+<div id="feedback-7" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Feedback<a href="beispiel-analyse.html#feedback-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://twitter-r-uni-beielefeld.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="freq_table_analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

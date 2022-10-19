@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Zweite Lerneinheit - Twitter Analyse: Häufigkeitstabelle &amp; Wordcloud | Self-learning material book</title>
+  <meta name="description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Zweite Lerneinheit - Twitter Analyse: Häufigkeitstabelle &amp; Wordcloud | Self-learning material book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Zweite Lerneinheit - Twitter Analyse: Häufigkeitstabelle &amp; Wordcloud | Self-learning material book" />
+  
+  <meta name="twitter:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
+  
+
+<meta name="author" content="Prof. Berenike Herrmann, Prof. Oliver Böhm-Kasper, Quy-Sing Glindemann-Tsan" />
+
+
+<meta name="date" content="2022-10-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="beispiel-analyse.html"/>
+<link rel="next" href="dritte-lerneinheit---sentimentanalyse-teil-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#cop"><i class="fa fa-check"></i><b>1.1</b> CoP</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#einleitung-zur-selbstlerneinheit"><i class="fa fa-check"></i><b>1.2</b> Einleitung zur Selbstlerneinheit</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#typographische-konvention"><i class="fa fa-check"></i><b>1.3</b> Typographische Konvention</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i><b>1.3.1</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#quelleweiterführende-information"><i class="fa fa-check"></i><b>1.4</b> Quelle/weiterführende Information</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#feedback-1"><i class="fa fa-check"></i><b>1.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro-twitter.html"><a href="intro-twitter.html"><i class="fa fa-check"></i><b>2</b> Einführung in Social Media - Twitter</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro-twitter.html"><a href="intro-twitter.html#was-ist-twitter"><i class="fa fa-check"></i><b>2.1</b> Was ist Twitter?</a></li>
+<li class="chapter" data-level="2.2" data-path="intro-twitter.html"><a href="intro-twitter.html#umfrage-welche-social-media-nutzt-du"><i class="fa fa-check"></i><b>2.2</b> Umfrage: Welche Social Media nutzt du?</a></li>
+<li class="chapter" data-level="2.3" data-path="intro-twitter.html"><a href="intro-twitter.html#ergebnis-der-umfrage-im-seminar"><i class="fa fa-check"></i><b>2.3</b> Ergebnis der Umfrage im Seminar:</a></li>
+<li class="chapter" data-level="2.4" data-path="intro-twitter.html"><a href="intro-twitter.html#quelleweiterführende-information-1"><i class="fa fa-check"></i><b>2.4</b> Quelle/weiterführende Information</a></li>
+<li class="chapter" data-level="2.5" data-path="intro-twitter.html"><a href="intro-twitter.html#feedback-2"><i class="fa fa-check"></i><b>2.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html"><i class="fa fa-check"></i><b>3</b> Einführung in RStudio (Cloud)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#zugang"><i class="fa fa-check"></i><b>3.1</b> Zugang</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#aufgabe"><i class="fa fa-check"></i><b>3.1.1</b> Aufgabe</a></li>
+<li class="chapter" data-level="3.1.2" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#aufgabe-1"><i class="fa fa-check"></i><b>3.1.2</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#erste-schritte"><i class="fa fa-check"></i><b>3.2</b> Erste Schritte</a></li>
+<li class="chapter" data-level="3.3" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#knowledge-check"><i class="fa fa-check"></i><b>3.3</b> Knowledge-Check</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#ergänzende-video-tutorials-zum-rstudio-handling"><i class="fa fa-check"></i><b>3.3.1</b> Ergänzende Video-Tutorials zum RStudio-Handling</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="einführung-in-rstudio-cloud.html"><a href="einführung-in-rstudio-cloud.html#feedback-3"><i class="fa fa-check"></i><b>3.4</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="einführung-in-die-twitter-api.html"><a href="einführung-in-die-twitter-api.html"><i class="fa fa-check"></i><b>4</b> Einführung in die Twitter API</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="einführung-in-die-twitter-api.html"><a href="einführung-in-die-twitter-api.html#twitter-api"><i class="fa fa-check"></i><b>4.1</b> Twitter API</a></li>
+<li class="chapter" data-level="4.2" data-path="einführung-in-die-twitter-api.html"><a href="einführung-in-die-twitter-api.html#feedback-4"><i class="fa fa-check"></i><b>4.2</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html"><i class="fa fa-check"></i><b>5</b> Organisation des virtuellen Workplace</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#workplace_prep"><i class="fa fa-check"></i><b>5.1</b> Vorschlag für die Arbeitsorganisation</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#rstudio"><i class="fa fa-check"></i><b>5.1.1</b> RStudio</a></li>
+<li class="chapter" data-level="5.1.2" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#rstudio-cloud"><i class="fa fa-check"></i><b>5.1.2</b> RStudio Cloud</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="organisation-des-virtuellen-workplace.html"><a href="organisation-des-virtuellen-workplace.html#feedback-5"><i class="fa fa-check"></i><b>5.2</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><i class="fa fa-check"></i><b>6</b> Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen”</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#workspace-erstellen"><i class="fa fa-check"></i><b>6.1</b> Workspace erstellen</a></li>
+<li class="chapter" data-level="6.2" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#authentifizierung"><i class="fa fa-check"></i><b>6.2</b> Authentifizierung</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#einlesen-von-notwendigen-paketen"><i class="fa fa-check"></i><b>6.2.1</b> Einlesen von notwendigen Paketen</a></li>
+<li class="chapter" data-level="6.2.2" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#erstellen-eines-authentifikations-token"><i class="fa fa-check"></i><b>6.2.2</b> Erstellen eines Authentifikations-Token</a></li>
+<li class="chapter" data-level="6.2.3" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#einlesen-von-twitter-daten"><i class="fa fa-check"></i><b>6.2.3</b> Einlesen von Twitter-Daten</a></li>
+<li class="chapter" data-level="6.2.4" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#ergebnisse"><i class="fa fa-check"></i><b>6.2.4</b> Ergebnisse</a></li>
+<li class="chapter" data-level="6.2.5" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#abspeichern"><i class="fa fa-check"></i><b>6.2.5</b> Abspeichern</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#fingerübung"><i class="fa fa-check"></i><b>6.3</b> Fingerübung</a></li>
+<li class="chapter" data-level="6.4" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#quelle"><i class="fa fa-check"></i><b>6.4</b> Quelle</a></li>
+<li class="chapter" data-level="6.5" data-path="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#feedback-6"><i class="fa fa-check"></i><b>6.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html"><i class="fa fa-check"></i><b>7</b> Beispiel-Analyse</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#workplace-authentifizierung-twitter"><i class="fa fa-check"></i><b>7.1</b> Workplace &amp; Authentifizierung Twitter</a></li>
+<li class="chapter" data-level="7.2" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#tweets-suche"><i class="fa fa-check"></i><b>7.2</b> Tweets-Suche</a></li>
+<li class="chapter" data-level="7.3" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#häufigste-user-der-hashtags-bielefeld-oder-bielefeld"><i class="fa fa-check"></i><b>7.3</b> Häufigste User der Hashtags #Bielefeld oder #bielefeld</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#visualisierung-der-daten"><i class="fa fa-check"></i><b>7.3.1</b> Visualisierung der Daten:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#quelle-1"><i class="fa fa-check"></i><b>7.4</b> Quelle</a></li>
+<li class="chapter" data-level="7.5" data-path="beispiel-analyse.html"><a href="beispiel-analyse.html#feedback-7"><i class="fa fa-check"></i><b>7.5</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html"><i class="fa fa-check"></i><b>8</b> Zweite Lerneinheit - Twitter Analyse: Häufigkeitstabelle &amp; Wordcloud</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#vorbereitung"><i class="fa fa-check"></i><b>8.1</b> Vorbereitung</a></li>
+<li class="chapter" data-level="8.2" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#twitter-suche"><i class="fa fa-check"></i><b>8.2</b> Twitter Suche</a></li>
+<li class="chapter" data-level="8.3" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-pre-processing-cleaning"><i class="fa fa-check"></i><b>8.3</b> Data Pre-Processing: Cleaning</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#aufgabe-2"><i class="fa fa-check"></i><b>8.3.1</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-pre-processing-transformieren"><i class="fa fa-check"></i><b>8.4</b> Data Pre-Processing: Transformieren</a></li>
+<li class="chapter" data-level="8.5" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-visualization-häufigkeitstabelle"><i class="fa fa-check"></i><b>8.5</b> Data Visualization: Häufigkeitstabelle</a></li>
+<li class="chapter" data-level="8.6" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#eigene-stopwörter-erstellen"><i class="fa fa-check"></i><b>8.6</b> Eigene Stopwörter erstellen</a></li>
+<li class="chapter" data-level="8.7" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#data-visualization-word-cloud"><i class="fa fa-check"></i><b>8.7</b> Data Visualization: Word-Cloud</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#aufgabe-3"><i class="fa fa-check"></i><b>8.7.1</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#quelle-2"><i class="fa fa-check"></i><b>8.8</b> Quelle</a></li>
+<li class="chapter" data-level="8.9" data-path="freq_table_analysis.html"><a href="freq_table_analysis.html#feedback-8"><i class="fa fa-check"></i><b>8.9</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html"><i class="fa fa-check"></i><b>9</b> Dritte Lerneinheit - Sentimentanalyse: Teil 1</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html#aufgabe-4"><i class="fa fa-check"></i><b>9.1</b> Aufgabe</a></li>
+<li class="chapter" data-level="9.2" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html#knowledge-check-1"><i class="fa fa-check"></i><b>9.2</b> Knowledge-Check</a></li>
+<li class="chapter" data-level="9.3" data-path="dritte-lerneinheit---sentimentanalyse-teil-1.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-1.html#feedback-9"><i class="fa fa-check"></i><b>9.3</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html"><i class="fa fa-check"></i><b>10</b> Dritte Lerneinheit - Sentimentanalyse: Teil 2</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#aufgabe-5"><i class="fa fa-check"></i><b>10.1</b> Aufgabe</a></li>
+<li class="chapter" data-level="10.2" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#vorbereitung-1"><i class="fa fa-check"></i><b>10.2</b> Vorbereitung</a></li>
+<li class="chapter" data-level="10.3" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#groß--und-kleinschreibung"><i class="fa fa-check"></i><b>10.3</b> Groß- und Kleinschreibung</a></li>
+<li class="chapter" data-level="10.4" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#ergebnis-des-data-pre-processing"><i class="fa fa-check"></i><b>10.4</b> Ergebnis des Data Pre-Processing</a></li>
+<li class="chapter" data-level="10.5" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#lexikonwörterbuch"><i class="fa fa-check"></i><b>10.5</b> Lexikon/Wörterbuch</a></li>
+<li class="chapter" data-level="10.6" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#ergänzung-der-positiven-und-negativen-sentiments"><i class="fa fa-check"></i><b>10.6</b> Ergänzung der positiven und negativen Sentiments</a></li>
+<li class="chapter" data-level="10.7" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#sentimentanalyse"><i class="fa fa-check"></i><b>10.7</b> Sentimentanalyse</a></li>
+<li class="chapter" data-level="10.8" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#visualisierung-sentimentanalyse"><i class="fa fa-check"></i><b>10.8</b> Visualisierung Sentimentanalyse</a></li>
+<li class="chapter" data-level="10.9" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#sentiment-score"><i class="fa fa-check"></i><b>10.9</b> Sentiment-Score</a></li>
+<li class="chapter" data-level="10.10" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#word-cloud"><i class="fa fa-check"></i><b>10.10</b> Word-Cloud</a></li>
+<li class="chapter" data-level="10.11" data-path="dritte-lerneinheit---sentimentanalyse-teil-2.html"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#feedback-10"><i class="fa fa-check"></i><b>10.11</b> Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html"><i class="fa fa-check"></i><b>11</b> Abschluss Aufgabe</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html#inhalt"><i class="fa fa-check"></i><b>11.1</b> Inhalt</a></li>
+<li class="chapter" data-level="11.2" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html#einführung-in-rmarkdown"><i class="fa fa-check"></i><b>11.2</b> Einführung in RMarkdown</a></li>
+<li class="chapter" data-level="11.3" data-path="abschluss-aufgabe.html"><a href="abschluss-aufgabe.html#feedback-11"><i class="fa fa-check"></i><b>11.3</b> Feedback</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Self-learning material book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="freq_table_analysis" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Zweite Lerneinheit - Twitter Analyse: Häufigkeitstabelle &amp; Wordcloud<a href="freq_table_analysis.html#freq_table_analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Dieser Abschnitt behandelt die Visualisierung einer Häufigkeitstabelle und einer
+Wordcloud auf der Grundlage von twitter-Daten.</p>
+<div id="vorbereitung" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Vorbereitung<a href="freq_table_analysis.html#vorbereitung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="caution-box caution-img">
+<p>Dafür ist es hilfreich sich vorbereitend die Website <a href="https://www.earthdatascience.org/courses/earth-analytics/get-data-using-apis/text-mining-twitter-data-intro-r/">„Work With Twitter Social Media Data in R - An Introduction - Lesson 3: “Text Mining Twitter Data With TidyText in R”</a> anzuschauen.</p>
+<p>In diesem Eintrag wird die Bedeutung der Begriffe wie ‘Data Munging’ respektive ‘Data Pre-Processing’ für die Visualierung hervorgehoben und deren Handhabarkeit in R knapp erläutert.</p>
+</div>
+</div>
+<div id="twitter-suche" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Twitter Suche<a href="freq_table_analysis.html#twitter-suche" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Für diese Analyse werden wir nach den Hashtags #Erziehung und #Lyrik suchen. Vorab ist die Authentifizierung mit der Twitter-API notwendig.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="freq_table_analysis.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Abruf von Tweets unter den Hashtags #Erziehung &amp; #Lyrik</span></span>
+<span id="cb24-2"><a href="freq_table_analysis.html#cb24-2" aria-hidden="true" tabindex="-1"></a>erziehung_tweets <span class="ot">&lt;-</span> <span class="fu">search_tweets</span>(<span class="st">&quot;#Erziehung&quot;</span>, <span class="at">n=</span><span class="dv">10000</span>,</span>
+<span id="cb24-3"><a href="freq_table_analysis.html#cb24-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">lang =</span> <span class="st">&quot;de&quot;</span>,</span>
+<span id="cb24-4"><a href="freq_table_analysis.html#cb24-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_rts =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-5"><a href="freq_table_analysis.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="freq_table_analysis.html#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="freq_table_analysis.html#cb24-7" aria-hidden="true" tabindex="-1"></a>lyrik_tweets <span class="ot">&lt;-</span> <span class="fu">search_tweets</span>(<span class="st">&quot;#Lyrik&quot;</span>, <span class="at">n=</span><span class="dv">10000</span>,</span>
+<span id="cb24-8"><a href="freq_table_analysis.html#cb24-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">lang =</span> <span class="st">&quot;de&quot;</span>,</span>
+<span id="cb24-9"><a href="freq_table_analysis.html#cb24-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">include_rts =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</details>
+</div>
+<div id="data-pre-processing-cleaning" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Data Pre-Processing: Cleaning<a href="freq_table_analysis.html#data-pre-processing-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ein wesentlicher Bestandteil der Datensammlung respektive der Datenbeschaffung ist die Bereinigung der Daten. Hierbei werden beispielsweise auf Fehler und Inkonsistenz der Daten geprüft. Des Weiteren werden irrelevante und korrupte Daten identifiziert und korrigiert. Mit diesem Schritt wird dafür gesorgt, dass die Daten, die wir präsentieren und weiterverarbeiten wollen konsistent und valide sind.</p>
+<p>Vorerst schauen wir uns die Twitter Beiträge an.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="freq_table_analysis.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Anzeige der ersten Einträge in der Variable &quot;text&quot;</span></span>
+<span id="cb25-2"><a href="freq_table_analysis.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> (erziehung_tweets<span class="sc">$</span>text) </span></code></pre></div>
+</details>
+<pre><code>## [1] &quot;die die dieses Beschliessen, den \&quot;Scheiss\&quot; vmtl? dieses #Schulessen nie selbst geniessen. Zu teuer? Beste #Bildung #Erziehung fängt schon beim Essen an. Kostenlose Getränke, Obst, Essen für alle Kinder. Ohne Essengelder. Gleiche Chancen für alle \&quot;MC Rewe Good Food Snack Pack\&quot;🍌💶&quot;
+## [2] &quot;Ich erwarte dich im @YooTalk  zu deiner \nTäglichen #Looseraufgabe.\n\nRufe an und berichte über dein #Loserleben\n\n🔗 https://t.co/3CEglYZEr0\n\n #Yootalk #Geldherrin #Erziehung #LadyJessica \n\n@yoochatnet @FINmessageDE @moneydom_p  \n@FaDo_FinSupport @rtfindomger @rt_promo06&quot;     
+## [3] &quot;RT @Lucy_Bella069: Es wird Zeit abzudrücken mein kleines Paypig.\nMach deine Herrin glücklich und drück fleißig ab.\n\n@MistressPromo_ \n#rtgam…&quot;                                                                                                                                            
+## [4] &quot;RT @CeFiBildung: CeFi - Akademie und Fachberatung \n\nWir freuen uns mitzuteilen, dass unsere CeFi - Akademie und Fachberatung mit Ihren Akti…&quot;                                                                                                                                              
+## [5] &quot;CeFi - Akademie und Fachberatung \n\nWir freuen uns mitzuteilen, dass unsere CeFi - Akademie und Fachberatung mit Ihren Aktivitäten startet. \n\nhttps://t.co/z625CyGPLQ \n\n#CeFi #Akademie #Fachberatung #Bildung #Erziehung #Verständigung #Berlin https://t.co/oeSzeRvM3r&quot;               
+## [6] &quot;#Zitat #Zitate #Sprüche #Rat #Ratschlag #Erziehung #Pädagogik #Psychologie #Psyche \n\n\&quot;Wenn ich mit Härte vorgehe, dann erreiche ich eben Härte.\&quot; @Schwertbischof&quot;</code></pre>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="freq_table_analysis.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> (lyrik_tweets<span class="sc">$</span>text)</span></code></pre></div>
+</details>
+<pre><code>## [1] &quot;RT @o_franco_aleman: O komm,\nKomm zu mir,\nIch bin ja so süß nach dir.\nIch deine Lebendige,\nDeine weilende Zier,\nVergehe nach dir.\n\nPeter Hi…&quot;
+## [2] &quot;RT @o_franco_aleman: O komm,\nKomm zu mir,\nIch bin ja so süß nach dir.\nIch deine Lebendige,\nDeine weilende Zier,\nVergehe nach dir.\n\nPeter Hi…&quot;
+## [3] &quot;RT @o_franco_aleman: Im Namen der #Liebe \nverschenken wir das #Herz. \nIch verblute.\n\nPeter Turrini\n\n#lyrik #poesie #fotografie https://t.co…&quot; 
+## [4] &quot;RT @o_franco_aleman: O komm,\nKomm zu mir,\nIch bin ja so süß nach dir.\nIch deine Lebendige,\nDeine weilende Zier,\nVergehe nach dir.\n\nPeter Hi…&quot;
+## [5] &quot;RT @o_franco_aleman: So ruhig geh ich meinen Pfad,\nso still ist mir zumut,\nes dünkt mir jeder Weg gerad\nund jedes Wetter gut.\n\nWohin mein W…&quot;  
+## [6] &quot;RT @o_franco_aleman: So ruhig geh ich meinen Pfad,\nso still ist mir zumut,\nes dünkt mir jeder Weg gerad\nund jedes Wetter gut.\n\nWohin mein W…&quot;</code></pre>
+<p>Als erstes wird der HTML-Text entfernt. Dabei werden die bereinigten Texte in einer neuen Spalte “stripped_text” abgespeichert.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="freq_table_analysis.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bereinigung um URLs und teilweise html-function</span></span>
+<span id="cb29-2"><a href="freq_table_analysis.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bereinigung um URLS</span></span>
+<span id="cb29-3"><a href="freq_table_analysis.html#cb29-3" aria-hidden="true" tabindex="-1"></a>erziehung_tweets<span class="sc">$</span>stripped_text <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;http.*&quot;</span>,<span class="st">&quot;&quot;</span>,  erziehung_tweets<span class="sc">$</span>text) </span>
+<span id="cb29-4"><a href="freq_table_analysis.html#cb29-4" aria-hidden="true" tabindex="-1"></a>erziehung_tweets<span class="sc">$</span>stripped_text <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;https.*&quot;</span>,<span class="st">&quot;&quot;</span>, erziehung_tweets<span class="sc">$</span>stripped_text) </span>
+<span id="cb29-5"><a href="freq_table_analysis.html#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="freq_table_analysis.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Bereinigung um URLS</span></span>
+<span id="cb29-7"><a href="freq_table_analysis.html#cb29-7" aria-hidden="true" tabindex="-1"></a>lyrik_tweets<span class="sc">$</span>stripped_text <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;http.*&quot;</span>,<span class="st">&quot;&quot;</span>,  lyrik_tweets<span class="sc">$</span>text)</span>
+<span id="cb29-8"><a href="freq_table_analysis.html#cb29-8" aria-hidden="true" tabindex="-1"></a>lyrik_tweets<span class="sc">$</span>stripped_text <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;https.*&quot;</span>,<span class="st">&quot;&quot;</span>, lyrik_tweets<span class="sc">$</span>stripped_text)</span></code></pre></div>
+</details>
+<div id="aufgabe-2" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Aufgabe<a href="freq_table_analysis.html#aufgabe-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="task-box task-img">
+<ul>
+<li>Um die Schritte der Datenbereinigung praktisch nachzuvollziehen, bereinige die Texteinträge erneut durch und entferne die HTML-Syntax-Zeichen: <code>&amp;amp;</code> mit <code>&amp;</code> und die <code>\n</code> mit <code>" "(Leerzeichen)</code> .</li>
+</ul>
+</div>
+<p>Nach der ersten groben Bereinigung betrachten wir nun das Ergebnis.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="freq_table_analysis.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> (erziehung_tweets<span class="sc">$</span>stripped_text)</span></code></pre></div>
+</details>
+<pre><code>## [1] &quot;die die dieses Beschliessen, den \&quot;Scheiss\&quot; vmtl? dieses #Schulessen nie selbst geniessen. Zu teuer? Beste #Bildung #Erziehung fängt schon beim Essen an. Kostenlose Getränke, Obst, Essen für alle Kinder. Ohne Essengelder. Gleiche Chancen für alle \&quot;MC Rewe Good Food Snack Pack\&quot;🍌💶&quot;
+## [2] &quot;Ich erwarte dich im @YooTalk  zu deiner  Täglichen #Looseraufgabe.  Rufe an und berichte über dein #Loserleben  🔗 &quot;                                                                                                                                                                         
+## [3] &quot;RT @Lucy_Bella069: Es wird Zeit abzudrücken mein kleines Paypig. Mach deine Herrin glücklich und drück fleißig ab.  @MistressPromo_  #rtgam…&quot;                                                                                                                                                
+## [4] &quot;RT @CeFiBildung: CeFi - Akademie und Fachberatung   Wir freuen uns mitzuteilen, dass unsere CeFi - Akademie und Fachberatung mit Ihren Akti…&quot;                                                                                                                                                
+## [5] &quot;CeFi - Akademie und Fachberatung   Wir freuen uns mitzuteilen, dass unsere CeFi - Akademie und Fachberatung mit Ihren Aktivitäten startet.   &quot;                                                                                                                                               
+## [6] &quot;#Zitat #Zitate #Sprüche #Rat #Ratschlag #Erziehung #Pädagogik #Psychologie #Psyche   \&quot;Wenn ich mit Härte vorgehe, dann erreiche ich eben Härte.\&quot; @Schwertbischof&quot;</code></pre>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="freq_table_analysis.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> (lyrik_tweets<span class="sc">$</span>stripped_text)</span></code></pre></div>
+</details>
+<pre><code>## [1] &quot;RT @o_franco_aleman: O komm, Komm zu mir, Ich bin ja so süß nach dir. Ich deine Lebendige, Deine weilende Zier, Vergehe nach dir.  Peter Hi…&quot;
+## [2] &quot;RT @o_franco_aleman: O komm, Komm zu mir, Ich bin ja so süß nach dir. Ich deine Lebendige, Deine weilende Zier, Vergehe nach dir.  Peter Hi…&quot;
+## [3] &quot;RT @o_franco_aleman: Im Namen der #Liebe  verschenken wir das #Herz.  Ich verblute.  Peter Turrini  #lyrik #poesie #fotografie &quot;             
+## [4] &quot;RT @o_franco_aleman: O komm, Komm zu mir, Ich bin ja so süß nach dir. Ich deine Lebendige, Deine weilende Zier, Vergehe nach dir.  Peter Hi…&quot;
+## [5] &quot;RT @o_franco_aleman: So ruhig geh ich meinen Pfad, so still ist mir zumut, es dünkt mir jeder Weg gerad und jedes Wetter gut.  Wohin mein W…&quot;
+## [6] &quot;RT @o_franco_aleman: So ruhig geh ich meinen Pfad, so still ist mir zumut, es dünkt mir jeder Weg gerad und jedes Wetter gut.  Wohin mein W…&quot;</code></pre>
+</div>
+</div>
+<div id="data-pre-processing-transformieren" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Data Pre-Processing: Transformieren<a href="freq_table_analysis.html#data-pre-processing-transformieren" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Für die Darstellung der Daten in einer Häufigkeitstabelle respektive in einer Wordcloud, müssen wir die Texte mithilfe den Paketen <code>dplyr</code> und <code>tidytext</code> in einzelne Wörter zerlegen.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="freq_table_analysis.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Tweets in einzelne Worte zerlegen</span></span>
+<span id="cb34-2"><a href="freq_table_analysis.html#cb34-2" aria-hidden="true" tabindex="-1"></a>erziehung_tweets_clean <span class="ot">&lt;-</span> erziehung_tweets <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="freq_table_analysis.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(stripped_text) <span class="sc">%&gt;%</span></span>
+<span id="cb34-4"><a href="freq_table_analysis.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, stripped_text)</span>
+<span id="cb34-5"><a href="freq_table_analysis.html#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="freq_table_analysis.html#cb34-6" aria-hidden="true" tabindex="-1"></a>lyrik_tweets_clean <span class="ot">&lt;-</span> lyrik_tweets <span class="sc">%&gt;%</span></span>
+<span id="cb34-7"><a href="freq_table_analysis.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(stripped_text) <span class="sc">%&gt;%</span></span>
+<span id="cb34-8"><a href="freq_table_analysis.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, stripped_text)</span></code></pre></div>
+</details>
+</div>
+<div id="data-visualization-häufigkeitstabelle" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Data Visualization: Häufigkeitstabelle<a href="freq_table_analysis.html#data-visualization-häufigkeitstabelle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nun werfen wir einen ersten Blick auf den Stand der Daten über eine Häufigkeitstabelle. Mithilfe des Pakets <code>ggplot2</code>. visualisieren wir die Twitter Daten: <code>èrziehung_tweets_clean</code></p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="freq_table_analysis.html#cb35-1" aria-hidden="true" tabindex="-1"></a>erziehung_tweets_clean <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="freq_table_analysis.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="freq_table_analysis.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="freq_table_analysis.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a href="freq_table_analysis.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> word, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb35-6"><a href="freq_table_analysis.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">&#39;steelblue4&#39;</span>) <span class="sc">+</span></span>
+<span id="cb35-7"><a href="freq_table_analysis.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb35-8"><a href="freq_table_analysis.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb35-9"><a href="freq_table_analysis.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Anzahl&quot;</span>,</span>
+<span id="cb35-10"><a href="freq_table_analysis.html#cb35-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Wörter&quot;</span>,</span>
+<span id="cb35-11"><a href="freq_table_analysis.html#cb35-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Count of unique words No. 1&quot;</span>,</span>
+<span id="cb35-12"><a href="freq_table_analysis.html#cb35-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">&quot;Tweets using #Erziehung&quot;</span>,</span>
+<span id="cb35-13"><a href="freq_table_analysis.html#cb35-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">paste</span>(<span class="st">&quot;Source: Data collected from TwitterAPI via rtweet-package &quot;</span>,<span class="fu">Sys.Date</span>()))</span></code></pre></div>
+</details>
+<p><img src="_main_files/figure-html/data_viz%20-%20erziehung_tweets-1.png" width="672" /></p>
+<p>Offensichtlich enthält die Tabelle noch Wörter, die wenig aussagekräftig sind. Aus diesem Grund erscheint es sinnvoll die Daten um deutsche ‘Stopwords’ zu bereinigen. Hierfür verwenden wir das Paket <code>stopwords</code>. Falls das Paket noch nicht in der RStudio beziehungsweise in der RStudio Cloud Bibliothek vorhanden ist, installiere das Paket und lies es ein.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="freq_table_analysis.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Bereinigung um deutsche Stop-Words</span></span>
+<span id="cb36-2"><a href="freq_table_analysis.html#cb36-2" aria-hidden="true" tabindex="-1"></a>stopwords_de <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">word =</span> stopwords<span class="sc">::</span><span class="fu">stopwords</span>(<span class="at">language =</span> <span class="st">&quot;de&quot;</span>,<span class="at">source=</span><span class="st">&quot;stopwords-iso&quot;</span>))</span>
+<span id="cb36-3"><a href="freq_table_analysis.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="freq_table_analysis.html#cb36-4" aria-hidden="true" tabindex="-1"></a>erziehung_tweets_clean <span class="ot">&lt;-</span> erziehung_tweets_clean <span class="sc">%&gt;%</span></span>
+<span id="cb36-5"><a href="freq_table_analysis.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopwords_de, <span class="at">by=</span><span class="st">&quot;word&quot;</span>)</span>
+<span id="cb36-6"><a href="freq_table_analysis.html#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="freq_table_analysis.html#cb36-7" aria-hidden="true" tabindex="-1"></a>lyrik_tweets_clean <span class="ot">&lt;-</span> lyrik_tweets_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb36-8"><a href="freq_table_analysis.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stopwords_de, <span class="at">by=</span><span class="st">&quot;word&quot;</span>)</span></code></pre></div>
+</details>
+<p>Nach diesem Vorgang werfen wir erneut einen Blick auf die Häufigkeitstabelle.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="freq_table_analysis.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="do">##Erneute Ausgabe der häufigsten Wörter</span></span>
+<span id="cb37-2"><a href="freq_table_analysis.html#cb37-2" aria-hidden="true" tabindex="-1"></a>erziehung_tweets_clean <span class="sc">%&gt;%</span></span>
+<span id="cb37-3"><a href="freq_table_analysis.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-4"><a href="freq_table_analysis.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-5"><a href="freq_table_analysis.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-6"><a href="freq_table_analysis.html#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> word, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb37-7"><a href="freq_table_analysis.html#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">&#39;steelblue4&#39;</span>) <span class="sc">+</span></span>
+<span id="cb37-8"><a href="freq_table_analysis.html#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb37-9"><a href="freq_table_analysis.html#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb37-10"><a href="freq_table_analysis.html#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Anzahl&quot;</span>,</span>
+<span id="cb37-11"><a href="freq_table_analysis.html#cb37-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Wörter&quot;</span>,</span>
+<span id="cb37-12"><a href="freq_table_analysis.html#cb37-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Count of unique words No. 2&quot;</span>,</span>
+<span id="cb37-13"><a href="freq_table_analysis.html#cb37-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">&quot;Tweets using #Erziehung&quot;</span>,</span>
+<span id="cb37-14"><a href="freq_table_analysis.html#cb37-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">paste</span>(<span class="st">&quot;Source: Data collected from TwitterAPI via rtweet-package &quot;</span>,<span class="fu">Sys.Date</span>()))</span></code></pre></div>
+</details>
+<p><img src="_main_files/figure-html/data_viz_second-1.png" width="672" /></p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="freq_table_analysis.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe: mir #Lyrik oder einem selbst ausgewählten Hashtag die Analyse durchführen </span></span>
+<span id="cb38-2"><a href="freq_table_analysis.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufgabe 2: Die Wordcloud anhand der </span></span>
+<span id="cb38-3"><a href="freq_table_analysis.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Quelle</span></span></code></pre></div>
+</details>
+<p>Wir können erkennen, dass die Daten mit der Entfernung der Stopwörter aussagekräftiger werden in Bezug auf meist verwendeten Wörter. Es ist auch möglich eigene Stopwörter zu entfernen, die in der Häufigkeitstabelle auftachen; wie beispielsweise <code>RT</code>, <code>rt</code> für <code>ReTweet</code> und das Wort <code>Èrziehung</code> beziehungsweise <code>erziehung</code>.</p>
+</div>
+<div id="eigene-stopwörter-erstellen" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Eigene Stopwörter erstellen<a href="freq_table_analysis.html#eigene-stopwörter-erstellen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="freq_table_analysis.html#cb39-1" aria-hidden="true" tabindex="-1"></a>ownStopwords<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;RT&quot;</span>,<span class="st">&quot;Erziehung&quot;</span>, <span class="st">&quot;erziehung&quot;</span>,<span class="st">&quot;rt&quot;</span>)</span>
+<span id="cb39-2"><a href="freq_table_analysis.html#cb39-2" aria-hidden="true" tabindex="-1"></a>ownStopwords<span class="ot">&lt;-</span><span class="fu">data.frame</span>(ownStopwords)</span>
+<span id="cb39-3"><a href="freq_table_analysis.html#cb39-3" aria-hidden="true" tabindex="-1"></a>ownStopwords<span class="ot">&lt;-</span><span class="fu">rename</span> (ownStopwords, <span class="at">word=</span><span class="st">&quot;ownStopwords&quot;</span>)</span>
+<span id="cb39-4"><a href="freq_table_analysis.html#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="freq_table_analysis.html#cb39-5" aria-hidden="true" tabindex="-1"></a>erziehung_tweets_clean <span class="ot">&lt;-</span> erziehung_tweets_clean <span class="sc">%&gt;%</span></span>
+<span id="cb39-6"><a href="freq_table_analysis.html#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(ownStopwords, <span class="at">by=</span><span class="st">&quot;word&quot;</span>)</span></code></pre></div>
+</details>
+<p>Nun lassen wir uns die Häufigkeitstabelle erneut ausgeben. In diesem Fall wird auf den obigen Code verwiesen. Der Output sollte wie folgt aussehen (die einzelnen Wörter können sich bei Dir unterscheiden):</p>
+<p><img src="_main_files/figure-html/data_viz_third-1.png" width="672" /></p>
+</div>
+<div id="data-visualization-word-cloud" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> Data Visualization: Word-Cloud<a href="freq_table_analysis.html#data-visualization-word-cloud" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Eine andere Alternative zur Darstellung von Häufigkeitsanalysen ist die Visualisierung der Daten in einer Word-Cloud. Dazu existiert eigens ein Paket <code>wordcloud</code>, welche installiert und eingelesen werden muss. Wie neue Pakete hinzugefügt und eingelesen werden, wurden im vorherigen Kapitel <a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#einlesen-von-notwendigen-paketen">6.2.1</a> erläutert.</p>
+<p>Genau wie in der Erstellung der Häufigkeitstabelle ist es erforderlich die Wörter zu zählen. Der Unterschied ist hierbei, dass der Prozess der Auszählung im Vorfeld durchgeführt werden muss. Über den count-Funktion werden die Wörter gezählt und in dem Objekt `èrziehung_tweets_count`` abgespeichert.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="freq_table_analysis.html#cb40-1" aria-hidden="true" tabindex="-1"></a>erziehung_tweets_count <span class="ot">&lt;-</span> erziehung_tweets_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="freq_table_analysis.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</details>
+<p>Welche Daten das Objekt enthält, erhalten wir über die head-Funktion: Ein tibble-Objekt mit zwei Spalten Wörter und deren Häufigkeit.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="freq_table_analysis.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(erziehung_tweets_count)</span></code></pre></div>
+</details>
+<pre><code>## # A tibble: 6 × 2
+##   word                n
+##   &lt;chr&gt;           &lt;int&gt;
+## 1 lady__jessica      41
+## 2 findom             34
+## 3 00                 28
+## 4 oktober            28
+## 5 termin             28
+## 6 missbellalugosi    26</code></pre>
+<p>Nun zur Visualisierung der Wordcloud. Es wird ein Plot über die Funktion <code>wordcloud</code>erzeugt mit den Daten, die wir im vorherigen Schritt vorbereitet haben. Das Argument words wird der Spalte word aus dem Objekt <code>erziehung_tweets_count</code> und die freq wird aus der Spalte der Häufigkeit des Objektes gespeist.</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="freq_table_analysis.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud</span>(<span class="at">words =</span> erziehung_tweets_count<span class="sc">$</span>word, </span>
+<span id="cb43-2"><a href="freq_table_analysis.html#cb43-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">freq =</span> erziehung_tweets_count<span class="sc">$</span>n, </span>
+<span id="cb43-3"><a href="freq_table_analysis.html#cb43-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">max.words =</span> <span class="dv">50</span>, </span>
+<span id="cb43-4"><a href="freq_table_analysis.html#cb43-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">scale =</span> <span class="fu">c</span>(<span class="dv">2</span>,.<span class="dv">5</span>), </span>
+<span id="cb43-5"><a href="freq_table_analysis.html#cb43-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">colors=</span><span class="fu">brewer.pal</span>(<span class="dv">6</span>, <span class="st">&quot;Dark2&quot;</span>))</span></code></pre></div>
+</details>
+<p><img src="_main_files/figure-html/word_cloud_viz-1.png" width="672" /></p>
+<div id="aufgabe-3" class="section level3 hasAnchor" number="8.7.1">
+<h3><span class="header-section-number">8.7.1</span> Aufgabe<a href="freq_table_analysis.html#aufgabe-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="task-box task-img">
+<ul>
+<li>Die Visualisierungen sind nun auf der Datenbasis des Hashtags #Erziehung realisiert worden. Führe den aufgeführten Prozess mit einem eigenen Hashtag oder mit dem Hashtag #Lyrik durch.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="quelle-2" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">8.8</span> Quelle<a href="freq_table_analysis.html#quelle-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="https://rdocumentation.org/packages/stopwords/versions/2.3">Zur Dokumentation des Pakets: stopwords</a></li>
+<li><a href="https://www.rdocumentation.org/packages/wordcloud/versions/2.6">Zur Dokumentation des Pakets: wordcloud</a></li>
+</ul>
+</div>
+<div id="feedback-8" class="section level2 hasAnchor" number="8.9">
+<h2><span class="header-section-number">8.9</span> Feedback<a href="freq_table_analysis.html#feedback-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://twitter-r-uni-beielefeld.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="beispiel-analyse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dritte-lerneinheit---sentimentanalyse-teil-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
