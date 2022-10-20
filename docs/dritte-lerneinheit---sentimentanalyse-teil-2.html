@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Dritte Lerneinheit - Sentimentanalyse: Teil 2 | Self-learning material book</title>
+  <title>Chapter 10 Dritte Lerneinheit - Sentimentanalyse: Teil 2 | Self-learning material book</title>
   <meta name="description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Dritte Lerneinheit - Sentimentanalyse: Teil 2 | Self-learning material book" />
+  <meta property="og:title" content="Chapter 10 Dritte Lerneinheit - Sentimentanalyse: Teil 2 | Self-learning material book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Dritte Lerneinheit - Sentimentanalyse: Teil 2 | Self-learning material book" />
+  <meta name="twitter:title" content="Chapter 10 Dritte Lerneinheit - Sentimentanalyse: Teil 2 | Self-learning material book" />
   
   <meta name="twitter:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Berenike Herrmann, Prof. Oliver Böhm-Kasper, Quy-Sing Glindemann-Tsan" />
 
 
-<meta name="date" content="2022-10-19" />
+<meta name="date" content="2022-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,109 +268,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="dritte-lerneinheit---sentimentanalyse-teil-2" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">10</span> Dritte Lerneinheit - Sentimentanalyse: Teil 2<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#dritte-lerneinheit---sentimentanalyse-teil-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 10</span> Dritte Lerneinheit - Sentimentanalyse: Teil 2<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#dritte-lerneinheit---sentimentanalyse-teil-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Nach der inhaltlichen Auseinandersetzung mit dem Thema befassen wir uns mit der Realisierung einer Sentimentanalyse anhand unserer Twitter-Daten.</p>
 <div id="aufgabe-5" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Aufgabe<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#aufgabe-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="task-box task-img">
 <ul>
-<li>Versuche die Schritte der beispielhaften Anwendung einer Sentimentanalyse im folgenden Beitrag nachzuvollziehen:
-<a href="https://towardsdatascience.com/twitter-sentiment-analysis-and-visualization-using-r-22e1f70f6967">towardsdatascience.com</a></li>
+<li>Versuche die Schritte der beispielhaften Anwendung einer Sentimentanalyse im folgenden Beitrag nachzuvollziehen: <a href="https://towardsdatascience.com/twitter-sentiment-analysis-and-visualization-using-r-22e1f70f6967">towardsdatascience.com</a></li>
 </ul>
 </div>
 </div>
 <div id="vorbereitung-1" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Vorbereitung<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#vorbereitung-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Zunächst lesen wir alle Pakete ein, die uns bereits bekannt sind und die wir für die Analyse brauchen. Dies sind <code>rtweet</code>,<code>dplyr</code>,<code>tidytext</code>,<code>ggplot2</code>,<code>wordcloud</code>,<code>gridExtra</code> und <code>lsa</code>.
-Die Pakete sind insofern wichtig, da wir ebenfalls die Schritte des Data Pre-Processing wie im vorherigen [Kapitel] (#freq_table_analysis) durchführen müssen. Ferner greifen wir erneut auf die Twitter-API, sodass eine Authentizifierung über das entsprechende Paket notwendig ist.
-Die Analyse wird beispielhaft mit dem Hashtag #Lyrik durchgeführt. In diesem Zusammenhang wird vorausgesetzt, dass:
-- die Suche nach dem #Lyrik bereits vollzogen ist,
-- die Daten bereinigt wurden und
-- die Stopwörter entfernt wurden</p>
+<p>Zunächst lesen wir alle Pakete ein, die uns bereits bekannt sind und die wir für die Analyse brauchen. Dies sind <code>rtweet</code>,<code>dplyr</code>,<code>tidytext</code>,<code>ggplot2</code>,<code>wordcloud</code>,<code>gridExtra</code> und <code>stopwords</code>. Die Pakete sind insofern wichtig, da wir ebenfalls die Schritte des Data Pre-Processing wie im vorherigen <a href="freq_table_analysis.html#freq_table_analysis">Kapitel</a> durchführen müssen. Ferner greifen wir erneut auf die Twitter-API, sodass eine Authentizifierung über das entsprechende Paket notwendig ist. Die Analyse wird beispielhaft mit dem Hashtag #Lyrik durchgeführt. In diesem Zusammenhang wird vorausgesetzt, dass:</p>
+<ul>
+<li>die Suche nach dem #Lyrik bereits vollzogen ist,</li>
+<li>die Daten bereinigt wurden und</li>
+<li>die Stopwörter entfernt wurden</li>
+</ul>
 </div>
 <div id="groß--und-kleinschreibung" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Groß- und Kleinschreibung<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#groß--und-kleinschreibung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Für die Analyse werden die Tweets - wie bekannt - in einzelne Wörter zerlegt. Jedoch kommt für diese Analyse ein zusätzlicher Schritt hinzu. Die einzelnen Wörter sollen nicht ins kleingeschriebene konvertiert werden. Das Vorgehen ist insofern notwendig, da das verwendete Lexikon für die Sentimentanalyse kleingeschriebene und großgeschriebenen Wörter kennt. Der Code dafür lautet wie folgt:</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-1" aria-hidden="true" tabindex="-1"></a>lyrik_tweets_clean <span class="ot">&lt;-</span> lyrik_tweets <span class="sc">%&gt;%</span> </span>
-<span id="cb44-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(stripped_text) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, stripped_text, <span class="at">to_lower=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb43-1" aria-hidden="true" tabindex="-1"></a>lyrik_tweets_clean <span class="ot">&lt;-</span> lyrik_tweets <span class="sc">%&gt;%</span> </span>
+<span id="cb43-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(stripped_text) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, stripped_text, <span class="at">to_lower=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 </details>
 <p>Die default-Einstellung in dem Vorgehen ist die Wörter ins kleingeschriebene zu konvertieren.</p>
 </div>
 <div id="ergebnis-des-data-pre-processing" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> Ergebnis des Data Pre-Processing<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#ergebnis-des-data-pre-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Das Ergebnis sollte - in ähnlicher Weise - in einer Häufigkeitstabelle folgendermaßen aussehen:</p>
-<p><img src="_main_files/figure-html/data_viz_fourth-1.png" width="672" /></p>
+<p><img src="Self-learning-material-book_files/figure-html/data_viz_fourth-1.png" width="672" /></p>
 </div>
 <div id="lexikonwörterbuch" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Lexikon/Wörterbuch<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#lexikonwörterbuch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Das Lexikon, welches für die Sentimentanalyse verwendet wird, stammt von der <a href="https://www.wortschatz.uni-leipzig.de/de/download">Universität Leipzig: Leipzig Corpora Collection aus dem Projekt Deutscher Wortschatz</a>.
-Ferner bedienen wir uns für die Importierung des Wörterbuches an einen bereits fertigen Code von dem <a href="https://gist.github.com/PolMine/70eeb095328070c18bd00ee087272adf">Github User Polmine</a>, der das Paket <code>data.table</code>benötigt. Das Wörterbuch wird anschließend in dem Objekt <em>all_sentiments</em> abgespeichert.</p>
+<p>Das Lexikon, welches für die Sentimentanalyse verwendet wird, stammt von der <a href="https://www.wortschatz.uni-leipzig.de/de/download">Universität Leipzig: Leipzig Corpora Collection aus dem Projekt Deutscher Wortschatz</a>. Ferner bedienen wir uns für die Importierung des Wörterbuches an einen bereits fertigen Code von dem <a href="https://gist.github.com/PolMine/70eeb095328070c18bd00ee087272adf">Github User Polmine</a>, der das Paket <code>data.table</code>benötigt. Das Wörterbuch wird anschließend in dem Objekt <em>all_sentiments</em> abgespeichert.</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import SentiWS dictionary for sentiment analysis into R as data.table</span></span>
-<span id="cb45-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Source: https://gist.github.com/PolMine/70eeb095328070c18bd00ee087272adf</span></span>
-<span id="cb45-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table) </span>
-<span id="cb45-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion namens &quot;get_sentiws()&quot;</span></span>
-<span id="cb45-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-6" aria-hidden="true" tabindex="-1"></a>get_sentiws <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb45-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb45-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-8" aria-hidden="true" tabindex="-1"></a>  sentiws_tmp_dir <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&quot;sentiws&quot;</span>)</span>
-<span id="cb45-9"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(sentiws_tmp_dir)) <span class="fu">dir.create</span>(sentiws_tmp_dir)</span>
-<span id="cb45-10"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-10" aria-hidden="true" tabindex="-1"></a>  sentiws_zipfile <span class="ot">&lt;-</span> <span class="fu">file.path</span>(sentiws_tmp_dir, <span class="st">&quot;SentiWS_v2.0c.zip&quot;</span>)</span>
-<span id="cb45-11"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-11" aria-hidden="true" tabindex="-1"></a>  sentiws_url <span class="ot">&lt;-</span> <span class="st">&quot;http://pcai056.informatik.uni-leipzig.de/downloads/etc/SentiWS/SentiWS_v2.0.zip&quot;</span></span>
-<span id="cb45-12"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(<span class="at">url =</span> sentiws_url, <span class="at">destfile =</span> sentiws_zipfile)</span>
-<span id="cb45-13"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unzip</span>(<span class="at">zipfile =</span> sentiws_zipfile, <span class="at">exdir =</span> sentiws_tmp_dir)</span>
-<span id="cb45-14"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb45-15"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-15" aria-hidden="true" tabindex="-1"></a>  .unfold <span class="ot">&lt;-</span> <span class="cf">function</span>(.SD){</span>
-<span id="cb45-16"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-16" aria-hidden="true" tabindex="-1"></a>    pos <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;^([A-Z]+)</span><span class="sc">\\</span><span class="st">s+.*$&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, .SD[[<span class="st">&quot;data&quot;</span>]][<span class="dv">1</span>])</span>
-<span id="cb45-17"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-17" aria-hidden="true" tabindex="-1"></a>    weight <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;^[A-Z]+</span><span class="sc">\\</span><span class="st">s+(-?</span><span class="sc">\\</span><span class="st">d</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+).*$&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, .SD[[<span class="st">&quot;data&quot;</span>]][<span class="dv">1</span>]))</span>
-<span id="cb45-18"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-18" aria-hidden="true" tabindex="-1"></a>    words <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;^[A-Z]+</span><span class="sc">\\</span><span class="st">s+-?</span><span class="sc">\\</span><span class="st">d</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">s*(.*?)</span><span class="sc">\\</span><span class="st">s*$&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, .SD[[<span class="st">&quot;data&quot;</span>]][<span class="dv">1</span>])</span>
-<span id="cb45-19"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-19" aria-hidden="true" tabindex="-1"></a>    words <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s*$&quot;</span>, words)) <span class="fu">strsplit</span>(<span class="at">x =</span> words, <span class="at">split =</span> <span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]] <span class="cf">else</span> <span class="cn">NULL</span></span>
-<span id="cb45-20"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
-<span id="cb45-21"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">word =</span> <span class="fu">c</span>(.SD[[<span class="st">&quot;word&quot;</span>]][<span class="dv">1</span>], words),</span>
-<span id="cb45-22"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">base =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="fu">rep</span>(<span class="cn">FALSE</span>, <span class="at">times =</span> <span class="fu">length</span>(words))),</span>
-<span id="cb45-23"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">lemma =</span> .SD[[<span class="st">&quot;word&quot;</span>]][<span class="dv">1</span>],</span>
-<span id="cb45-24"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">pos =</span> pos,</span>
-<span id="cb45-25"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> weight</span>
-<span id="cb45-26"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-26" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb45-27"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-27" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb45-28"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-28" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb45-29"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-29" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb45-30"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-30" aria-hidden="true" tabindex="-1"></a>  dts <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
-<span id="cb45-31"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="at">positive =</span> <span class="st">&quot;SentiWS_v2.0_Positive.txt&quot;</span>, <span class="at">negative =</span> <span class="st">&quot;SentiWS_v2.0_Negative.txt&quot;</span>),</span>
-<span id="cb45-32"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(filename){</span>
-<span id="cb45-33"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-33" aria-hidden="true" tabindex="-1"></a>      dt <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="fu">file.path</span>(sentiws_tmp_dir, filename), <span class="at">sep =</span> <span class="st">&quot;|&quot;</span>)</span>
-<span id="cb45-34"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">colnames</span>(dt) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;word&quot;</span>, <span class="st">&quot;data&quot;</span>)</span>
-<span id="cb45-35"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-35" aria-hidden="true" tabindex="-1"></a>      dt[, <span class="st">&quot;id&quot;</span> <span class="sc">:</span><span class="er">=</span>  1L<span class="sc">:</span><span class="fu">nrow</span>(dt)]</span>
-<span id="cb45-36"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-36" aria-hidden="true" tabindex="-1"></a>      dt[, <span class="fu">.unfold</span>(.SD), by <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>)]</span>
-<span id="cb45-37"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-37" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb45-38"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-38" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb45-39"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbindlist</span>(dts)</span>
-<span id="cb45-40"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-40" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb45-41"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-42"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-42" aria-hidden="true" tabindex="-1"></a><span class="co">#Abspeicherung des Wörterbuches</span></span>
-<span id="cb45-43"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-43" aria-hidden="true" tabindex="-1"></a>all_sentiments <span class="ot">&lt;-</span> <span class="fu">get_sentiws</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import SentiWS dictionary for sentiment analysis into R as data.table</span></span>
+<span id="cb44-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Source: https://gist.github.com/PolMine/70eeb095328070c18bd00ee087272adf</span></span>
+<span id="cb44-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table) </span>
+<span id="cb44-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion namens &quot;get_sentiws()&quot;</span></span>
+<span id="cb44-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-6" aria-hidden="true" tabindex="-1"></a>get_sentiws <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb44-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-8" aria-hidden="true" tabindex="-1"></a>  sentiws_tmp_dir <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&quot;sentiws&quot;</span>)</span>
+<span id="cb44-9"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(sentiws_tmp_dir)) <span class="fu">dir.create</span>(sentiws_tmp_dir)</span>
+<span id="cb44-10"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-10" aria-hidden="true" tabindex="-1"></a>  sentiws_zipfile <span class="ot">&lt;-</span> <span class="fu">file.path</span>(sentiws_tmp_dir, <span class="st">&quot;SentiWS_v2.0c.zip&quot;</span>)</span>
+<span id="cb44-11"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-11" aria-hidden="true" tabindex="-1"></a>  sentiws_url <span class="ot">&lt;-</span> <span class="st">&quot;http://pcai056.informatik.uni-leipzig.de/downloads/etc/SentiWS/SentiWS_v2.0.zip&quot;</span></span>
+<span id="cb44-12"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(<span class="at">url =</span> sentiws_url, <span class="at">destfile =</span> sentiws_zipfile)</span>
+<span id="cb44-13"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unzip</span>(<span class="at">zipfile =</span> sentiws_zipfile, <span class="at">exdir =</span> sentiws_tmp_dir)</span>
+<span id="cb44-14"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-15"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-15" aria-hidden="true" tabindex="-1"></a>  .unfold <span class="ot">&lt;-</span> <span class="cf">function</span>(.SD){</span>
+<span id="cb44-16"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-16" aria-hidden="true" tabindex="-1"></a>    pos <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;^([A-Z]+)</span><span class="sc">\\</span><span class="st">s+.*$&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, .SD[[<span class="st">&quot;data&quot;</span>]][<span class="dv">1</span>])</span>
+<span id="cb44-17"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-17" aria-hidden="true" tabindex="-1"></a>    weight <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;^[A-Z]+</span><span class="sc">\\</span><span class="st">s+(-?</span><span class="sc">\\</span><span class="st">d</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+).*$&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, .SD[[<span class="st">&quot;data&quot;</span>]][<span class="dv">1</span>]))</span>
+<span id="cb44-18"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-18" aria-hidden="true" tabindex="-1"></a>    words <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;^[A-Z]+</span><span class="sc">\\</span><span class="st">s+-?</span><span class="sc">\\</span><span class="st">d</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">s*(.*?)</span><span class="sc">\\</span><span class="st">s*$&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, .SD[[<span class="st">&quot;data&quot;</span>]][<span class="dv">1</span>])</span>
+<span id="cb44-19"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-19" aria-hidden="true" tabindex="-1"></a>    words <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">&quot;^</span><span class="sc">\\</span><span class="st">s*$&quot;</span>, words)) <span class="fu">strsplit</span>(<span class="at">x =</span> words, <span class="at">split =</span> <span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]] <span class="cf">else</span> <span class="cn">NULL</span></span>
+<span id="cb44-20"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb44-21"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">word =</span> <span class="fu">c</span>(.SD[[<span class="st">&quot;word&quot;</span>]][<span class="dv">1</span>], words),</span>
+<span id="cb44-22"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">base =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="fu">rep</span>(<span class="cn">FALSE</span>, <span class="at">times =</span> <span class="fu">length</span>(words))),</span>
+<span id="cb44-23"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">lemma =</span> .SD[[<span class="st">&quot;word&quot;</span>]][<span class="dv">1</span>],</span>
+<span id="cb44-24"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">pos =</span> pos,</span>
+<span id="cb44-25"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> weight</span>
+<span id="cb44-26"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb44-27"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-28"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-29"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-30"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-30" aria-hidden="true" tabindex="-1"></a>  dts <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
+<span id="cb44-31"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="at">positive =</span> <span class="st">&quot;SentiWS_v2.0_Positive.txt&quot;</span>, <span class="at">negative =</span> <span class="st">&quot;SentiWS_v2.0_Negative.txt&quot;</span>),</span>
+<span id="cb44-32"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(filename){</span>
+<span id="cb44-33"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-33" aria-hidden="true" tabindex="-1"></a>      dt <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="fu">file.path</span>(sentiws_tmp_dir, filename), <span class="at">sep =</span> <span class="st">&quot;|&quot;</span>)</span>
+<span id="cb44-34"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">colnames</span>(dt) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;word&quot;</span>, <span class="st">&quot;data&quot;</span>)</span>
+<span id="cb44-35"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-35" aria-hidden="true" tabindex="-1"></a>      dt[, <span class="st">&quot;id&quot;</span> <span class="sc">:</span><span class="er">=</span>  1L<span class="sc">:</span><span class="fu">nrow</span>(dt)]</span>
+<span id="cb44-36"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-36" aria-hidden="true" tabindex="-1"></a>      dt[, <span class="fu">.unfold</span>(.SD), by <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>)]</span>
+<span id="cb44-37"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-37" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb44-38"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-38" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb44-39"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbindlist</span>(dts)</span>
+<span id="cb44-40"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-40" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-41"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-42"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-42" aria-hidden="true" tabindex="-1"></a><span class="co">#Abspeicherung des Wörterbuches</span></span>
+<span id="cb44-43"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb44-43" aria-hidden="true" tabindex="-1"></a>all_sentiments <span class="ot">&lt;-</span> <span class="fu">get_sentiws</span>()</span></code></pre></div>
 </details>
 </div>
 <div id="ergänzung-der-positiven-und-negativen-sentiments" class="section level2 hasAnchor" number="10.6">
 <h2><span class="header-section-number">10.6</span> Ergänzung der positiven und negativen Sentiments<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#ergänzung-der-positiven-und-negativen-sentiments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Das bereitgestellte Lexikon der Universität Leipzig besitzt eine ausdifferenzierte numerische Gewichtung über die Bewertung der Wörter als positiv oder als negativ. Für unsere Zwecke vereinfachen wir die Gewichtung und differenzieren nur zwischen positiven und negativen Sentiments. Das heißt wir transformieren ein metrisches Merkmal in ein kategoriales Merkmal.</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-1" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon_neg <span class="ot">&lt;-</span> all_sentiments <span class="sc">%&gt;%</span> </span>
-<span id="cb46-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight <span class="sc">&lt;=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb46-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> <span class="st">&quot;negativ&quot;</span>)</span>
-<span id="cb46-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-5" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon_pos <span class="ot">&lt;-</span> all_sentiments <span class="sc">%&gt;%</span> </span>
-<span id="cb46-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb46-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> <span class="st">&quot;positiv&quot;</span>)</span>
-<span id="cb46-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-9"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-9" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon <span class="ot">&lt;-</span> <span class="fu">merge</span>(all_sentiments_lexikon_neg, all_sentiments_lexikon_pos, <span class="at">all=</span>T)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-1" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon_neg <span class="ot">&lt;-</span> all_sentiments <span class="sc">%&gt;%</span> </span>
+<span id="cb45-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight <span class="sc">&lt;=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> <span class="st">&quot;negativ&quot;</span>)</span>
+<span id="cb45-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-5" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon_pos <span class="ot">&lt;-</span> all_sentiments <span class="sc">%&gt;%</span> </span>
+<span id="cb45-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sentiment =</span> <span class="st">&quot;positiv&quot;</span>)</span>
+<span id="cb45-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb45-9" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon <span class="ot">&lt;-</span> <span class="fu">merge</span>(all_sentiments_lexikon_neg, all_sentiments_lexikon_pos, <span class="at">all=</span>T)</span></code></pre></div>
 </details>
 <p>Anschließend wollen wir uns das gesamte Lexikon anschauen:</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeige gesamtes Lexikon</span></span>
-<span id="cb47-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(all_sentiments_lexikon)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeige gesamtes Lexikon</span></span>
+<span id="cb46-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(all_sentiments_lexikon)</span></code></pre></div>
 </details>
 <pre><code>##    id      word  base   lemma pos  weight sentiment
 ## 1:  1   Abbruch  TRUE Abbruch  NN -0.0048   negativ
@@ -381,9 +379,9 @@ Ferner bedienen wir uns für die Importierung des Wörterbuches an einen bereits
 ## 6:  1 Abbrüchen FALSE Abbruch  NN -0.0048   negativ</code></pre>
 <p>Zur Überprüfung der Transformation werfen wir einen Blick auf die positiven und negativen Sentiments:</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeige positive Lexikon-Einträge</span></span>
-<span id="cb49-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb49-2" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon <span class="sc">%&gt;%</span> </span>
-<span id="cb49-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (sentiment<span class="sc">==</span><span class="st">&quot;positiv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeige positive Lexikon-Einträge</span></span>
+<span id="cb48-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb48-2" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon <span class="sc">%&gt;%</span> </span>
+<span id="cb48-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (sentiment<span class="sc">==</span><span class="st">&quot;positiv&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>##          id        word  base    lemma  pos weight sentiment
 ##     1:    1   Abschluss FALSE Abschluß   NN  0.004   positiv
@@ -398,9 +396,9 @@ Ferner bedienen wir uns für die Importierung des Wörterbuches an einen bereits
 ## 16564: 1643   üppigster FALSE    üppig ADJX  0.201   positiv
 ## 16565: 1643   üppigstes FALSE    üppig ADJX  0.201   positiv</code></pre>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeige negative Lexikon-Einträge</span></span>
-<span id="cb51-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb51-2" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon <span class="sc">%&gt;%</span> </span>
-<span id="cb51-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (sentiment<span class="sc">==</span><span class="st">&quot;negativ&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeige negative Lexikon-Einträge</span></span>
+<span id="cb50-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb50-2" aria-hidden="true" tabindex="-1"></a>all_sentiments_lexikon <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (sentiment<span class="sc">==</span><span class="st">&quot;negativ&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>##          id           word  base        lemma   pos  weight sentiment
 ##     1:    1        Abbruch  TRUE      Abbruch    NN -0.0048   negativ
@@ -419,76 +417,76 @@ Ferner bedienen wir uns für die Importierung des Wörterbuches an einen bereits
 <h2><span class="header-section-number">10.7</span> Sentimentanalyse<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#sentimentanalyse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Nun können wir mit der eigentlichen Sentimentanalyse fortfahren. Dafür gleichen wir die lyrik-Tweets mit dem Lexikon ab und zählen die Übereinstimmungen. Anschließend geben wir das Ergebnis in dem neuen Objekt <em>sentiment_analysis_lyrik</em> mit dem <code>head()</code>-Befehl aus.</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb53-1" aria-hidden="true" tabindex="-1"></a>sentiment_analyse_lyrik<span class="ot">&lt;-</span> lyrik_tweets_clean <span class="sc">%&gt;%</span> </span>
-<span id="cb53-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(all_sentiments_lexikon) <span class="sc">%&gt;%</span> </span>
-<span id="cb53-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, sentiment, <span class="at">sort =</span> T) <span class="sc">%&gt;%</span> </span>
-<span id="cb53-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb53-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sentiment_analyse_lyrik)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb52-1" aria-hidden="true" tabindex="-1"></a>sentiment_analyse_lyrik<span class="ot">&lt;-</span> lyrik_tweets_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(all_sentiments_lexikon) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, sentiment, <span class="at">sort =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb52-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sentiment_analyse_lyrik)</span></code></pre></div>
 </details>
 <pre><code>## # A tibble: 6 × 3
 ##   word        sentiment     n
 ##   &lt;chr&gt;       &lt;chr&gt;     &lt;int&gt;
 ## 1 lernen      positiv     108
-## 2 ruhig       positiv      26
-## 3 wunderbaren positiv      17
-## 4 mutiger     positiv      16
-## 5 Schönheit   positiv       7
-## 6 edlen       positiv       6</code></pre>
+## 2 ruhig       positiv      19
+## 3 mutiger     positiv      16
+## 4 wunderbaren positiv       8
+## 5 Liebe       positiv       6
+## 6 hebt        positiv       4</code></pre>
 </div>
 <div id="visualisierung-sentimentanalyse" class="section level2 hasAnchor" number="10.8">
 <h2><span class="header-section-number">10.8</span> Visualisierung Sentimentanalyse<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#visualisierung-sentimentanalyse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Mithilfe einer Häufigkeitstabelle erhalten wir uns nun einen tieferen Einblick in die Daten. An dieser Stelle soll erneut darauf hingewiesen, dass das Merkmal <em>sentiment</em> als eine kategoriale Variable zu behandeln wird.</p>
+<p>Mithilfe einer Häufigkeitstabelle erhalten wir uns nun einen tieferen Einblick in die Daten. An dieser Stelle soll erneut darauf hingewiesen, dass das Merkmal <em>sentiment</em> als eine kategoriale Variable zu behandeln ist</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-1" aria-hidden="true" tabindex="-1"></a>sentiment_analyse_lyrik <span class="sc">%&gt;%</span> </span>
-<span id="cb55-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb55-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word,n)) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(word,n, <span class="at">fill=</span>sentiment)) <span class="sc">+</span></span>
-<span id="cb55-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> F) <span class="sc">+</span></span>
-<span id="cb55-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#facet_wrap: Unterscheidung zwischen den beiden Ausprägungen: positiv und negativ. </span></span>
-<span id="cb55-9"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sentiment, <span class="at">scales=</span><span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
-<span id="cb55-10"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Tweets #Lyrik&quot;</span>, </span>
-<span id="cb55-11"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">&quot;Anteil am Sentiment&quot;</span>,</span>
-<span id="cb55-12"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
-<span id="cb55-13"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-1" aria-hidden="true" tabindex="-1"></a>sentiment_analyse_lyrik <span class="sc">%&gt;%</span> </span>
+<span id="cb54-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb54-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word,n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(word,n, <span class="at">fill=</span>sentiment)) <span class="sc">+</span></span>
+<span id="cb54-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> F) <span class="sc">+</span></span>
+<span id="cb54-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#facet_wrap: Unterscheidung zwischen den beiden Ausprägungen: positiv und negativ. </span></span>
+<span id="cb54-9"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sentiment, <span class="at">scales=</span><span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb54-10"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Tweets #Lyrik&quot;</span>, </span>
+<span id="cb54-11"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span> <span class="st">&quot;Anteil am Sentiment&quot;</span>,</span>
+<span id="cb54-12"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb54-13"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb54-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div>
 </details>
-<p><img src="_main_files/figure-html/visualize_sentiment_analysis-1.png" width="672" /></p>
+<p><img src="Self-learning-material-book_files/figure-html/visualize_sentiment_analysis-1.png" width="672" /></p>
 </div>
 <div id="sentiment-score" class="section level2 hasAnchor" number="10.9">
 <h2><span class="header-section-number">10.9</span> Sentiment-Score<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#sentiment-score" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ferner ermöglicht die Gewichtung des Lexikon die Berechnung eines Sentiment-Scores für den Tweets-Datensatz. Der Sentiment-Score bewertet die Stimmung eines Transkripts beziehungsweise der Tweets in Bezug auf einem Spektrum von positiv (Wert 1) bis negativ (-1) bewerten. Für die Berechnung des Sentiment-Scores werden die Ergebnisse in dem Objekt <em>sentiment_score_lyrik</em> abgespeichert.</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-1" aria-hidden="true" tabindex="-1"></a>sentiment_score_lyrik<span class="ot">&lt;-</span> lyrik_tweets_clean <span class="sc">%&gt;%</span> </span>
-<span id="cb56-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(all_sentiments_lexikon) <span class="sc">%&gt;%</span> </span>
-<span id="cb56-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, sentiment, weight, <span class="at">sort =</span> T) <span class="sc">%&gt;%</span> </span>
-<span id="cb56-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb56-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Berechnung des Scores: Gewichtung * Häufigkeit</span></span>
-<span id="cb56-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-7" aria-hidden="true" tabindex="-1"></a>sentiment_score_lyrik <span class="ot">&lt;-</span> sentiment_score_lyrik <span class="sc">%&gt;%</span> </span>
-<span id="cb56-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">score =</span> weight<span class="sc">*</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-1" aria-hidden="true" tabindex="-1"></a>sentiment_score_lyrik<span class="ot">&lt;-</span> lyrik_tweets_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb55-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(all_sentiments_lexikon) <span class="sc">%&gt;%</span> </span>
+<span id="cb55-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word, sentiment, weight, <span class="at">sort =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb55-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb55-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Berechnung des Scores: Gewichtung * Häufigkeit</span></span>
+<span id="cb55-7"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-7" aria-hidden="true" tabindex="-1"></a>sentiment_score_lyrik <span class="ot">&lt;-</span> sentiment_score_lyrik <span class="sc">%&gt;%</span> </span>
+<span id="cb55-8"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb55-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">score =</span> weight<span class="sc">*</span>n)</span></code></pre></div>
 </details>
 <p>Mithilfe des Histogramms betrachten wir in welche Richtung die Tweets gelagert sind. Dafür lassen wir uns zwei unterschiedliche Histogramme anzeigen. Für die Einteilung des Histogramms existieren bestimmte Faustregeln, die an dieser Stelle nicht weiter erläutert werden. Die Berechnungsgrundlage ist die Wurzel aus der Anzahl an allen Wörtern. Das erste Histogramm teilen wir ein in 9 Klassen ein:</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sentiment_score_lyrik, <span class="fu">aes</span>(<span class="at">x=</span>weight)) <span class="sc">+</span></span>
-<span id="cb57-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">9</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sentiment_score_lyrik, <span class="fu">aes</span>(<span class="at">x=</span>weight)) <span class="sc">+</span></span>
+<span id="cb56-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">9</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb56-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb56-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Histogram Twitter - Sentiment Score&quot;</span>,</span>
+<span id="cb56-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Anzahl&quot;</span>,</span>
+<span id="cb56-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb56-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Sentiment Score&quot;</span>)</span></code></pre></div>
+</details>
+<p><img src="Self-learning-material-book_files/figure-html/sentiment_score_hist_bin_9-1.png" width="672" /></p>
+<p>Das zweite Histogramm wird in 18 Klassen eingeteilt:</p>
+<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sentiment_score_lyrik, <span class="fu">aes</span>(<span class="at">x=</span>weight)) <span class="sc">+</span> </span>
+<span id="cb57-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">18</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
 <span id="cb57-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb57-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Histogram Twitter - Sentiment Score&quot;</span>,</span>
 <span id="cb57-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Anzahl&quot;</span>,</span>
 <span id="cb57-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb57-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Sentiment Score&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="_main_files/figure-html/sentiment_score_hist_bin_9-1.png" width="672" /></p>
-<p>Das zweite Histogramm wird in 18 Klassen eingeteilt:</p>
-<details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sentiment_score_lyrik, <span class="fu">aes</span>(<span class="at">x=</span>weight)) <span class="sc">+</span> </span>
-<span id="cb58-2"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">18</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb58-3"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb58-4"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Histogram Twitter - Sentiment Score&quot;</span>,</span>
-<span id="cb58-5"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb58-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Anzahl&quot;</span>,</span>
-<span id="cb58-6"><a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#cb58-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Sentiment Score&quot;</span>)</span></code></pre></div>
-</details>
-<p><img src="_main_files/figure-html/sentiment_score_hist_bin_18-1.png" width="672" /></p>
+<p><img src="Self-learning-material-book_files/figure-html/sentiment_score_hist_bin_18-1.png" width="672" /></p>
 <p>In beiden Graphen ist zu erkennen, dass die Mehrheit der Wörter in den Tweets eher neutral sind. Ergänzend lässt sich eine stärkere Gewichtung eines positiven Trends erkennen als eines negativen Trends. Letzteres ist insbesondere im zweiten Histogramm wahrzunehmen.</p>
 </div>
 <div id="word-cloud" class="section level2 hasAnchor" number="10.10">
@@ -499,7 +497,7 @@ Ferner bedienen wir uns für die Importierung des Wörterbuches an einen bereits
 <li>Erstelle jeweils eine Word-Cloud für die beiden Sentiments (<strong>positiv</strong> und <strong>negativ</strong>)</li>
 </ol>
 </div>
-<p><img src="_main_files/figure-html/word_cloud_sentiment-1.png" width="672" /></p>
+<p><img src="Self-learning-material-book_files/figure-html/word_cloud_sentiment-1.png" width="672" /></p>
 </div>
 <div id="feedback-10" class="section level2 hasAnchor" number="10.11">
 <h2><span class="header-section-number">10.11</span> Feedback<a href="dritte-lerneinheit---sentimentanalyse-teil-2.html#feedback-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>

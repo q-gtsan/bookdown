@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen” | Self-learning material book</title>
+  <title>Chapter 6 Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen” | Self-learning material book</title>
   <meta name="description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen” | Self-learning material book" />
+  <meta property="og:title" content="Chapter 6 Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen” | Self-learning material book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen” | Self-learning material book" />
+  <meta name="twitter:title" content="Chapter 6 Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen” | Self-learning material book" />
   
   <meta name="twitter:description" content="This is a documentation of the seminar: Erwachsenwerden in der Netzliteratur. Mixed-methods Analysen von Social Media (twitter)" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Berenike Herrmann, Prof. Oliver Böhm-Kasper, Quy-Sing Glindemann-Tsan" />
 
 
-<meta name="date" content="2022-10-19" />
+<meta name="date" content="2022-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,7 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="erste-lerneinheit---twitter-authentifizierung-erste-analysen" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen”<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#erste-lerneinheit---twitter-authentifizierung-erste-analysen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 6</span> Erste Lerneinheit - Twitter Authentifizierung &amp; erste Analysen”<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#erste-lerneinheit---twitter-authentifizierung-erste-analysen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="caution-box caution-img">
 <p>Für die anschließende Bearbeitung sind der Zugang zu RStudio Cloud/RStudio sowie der Status <strong>elevated Access</strong> im Twitter-Developer Account erforderlich. Gehe in die entsprechenden Kapitel zurück, wenn die Voraussetzungen noch nichte erfüllt sind.</p>
 </div>
@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.2</span> Authentifizierung<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#authentifizierung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="einlesen-von-notwendigen-paketen" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Einlesen von notwendigen Paketen<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#einlesen-von-notwendigen-paketen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Zunächst werden im Skript die erforderlichen Pakete installiert und aufgerufen. Die Pakete beinhalten bestimmte Funktionen, die nicht im Basis-Umfang enthalten sind. Diese Funktionen sind für die Twitter-API und den ersten Analysen wichtig.</p>
+<p>Zunächst werden im Skript die erforderlichen Pakete installiert und aufgerufen. Die Pakete beinhalten bestimmte Funktionen, die nicht im Basis-Umfang enthalten sind. Diese Funktionen sind für die Twitter-API und die ersten Analysen wichtig.</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load twitter library </span></span>
 <span id="cb1-2"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtweet)</span>
@@ -303,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="erstellen-eines-authentifikations-token" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Erstellen eines Authentifikations-Token<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#erstellen-eines-authentifikations-token" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Im nächsten Schritt wird eine Verbindung zur Twitter API über das Paket <code>rtweet</code> hergestellt. Dafür müssen die Informationen (Bearer-Token), die im <a href="einführung-in-die-twitter-api.html#twitter-api">4.1</a> hinterlegt wurden, eingegeben.</p>
+<p>Im nächsten Schritt wird eine Verbindung zur Twitter API über das Paket <code>rtweet</code> hergestellt. Dafür müssen die Informationen (Bearer-Token), die im <a href="einführung-in-die-twitter-api.html#twitter-api">4.1</a> hinterlegt wurden, eingegeben werden.</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rtweet_app() Funktion um die eigene Twitter APP zu authentifizieren. </span></span>
 <span id="cb3-2"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Das ist die naheliegendste Funktionin Bezug auf das Sammeln von Daten</span></span>
@@ -325,7 +325,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="ergebnisse" class="section level3 hasAnchor" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> Ergebnisse<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#ergebnisse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Nachdem die Tweets heruntergeladen wurden, können wir nun einen Blick auf die Ergebnisse reinwerfen:</p>
+<p>Nachdem die Tweets heruntergeladen wurden, können wir nun einen Blick auf die Ergebnisse werfen:</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Übersicht über Datensatz</span></span>
 <span id="cb5-2"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Übersicht über die Struktur des Datensatzes</span></span>
@@ -335,12 +335,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 6 × 43
 ##   created_at               id id_str        full_…¹ trunc…² displ…³ entities    
 ##   &lt;dttm&gt;                &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;   &lt;lgl&gt;     &lt;dbl&gt; &lt;list&gt;      
-## 1 2022-10-19 22:32:49 1.58e18 158283215992… &quot;Der @… FALSE        62 &lt;named list&gt;
-## 2 2022-10-19 22:31:23 1.58e18 158283180100… &quot;RT @b… FALSE       118 &lt;named list&gt;
-## 3 2022-10-19 22:28:14 1.58e18 158283100879… &quot;Nicht… FALSE       101 &lt;named list&gt;
-## 4 2022-10-19 22:25:46 1.58e18 158283038839… &quot;Ich w… FALSE       137 &lt;named list&gt;
-## 5 2022-10-19 22:22:24 1.58e18 158282954045… &quot;Quo v… FALSE       103 &lt;named list&gt;
-## 6 2022-10-19 22:16:35 1.58e18 158282807681… &quot;DSC a… FALSE        39 &lt;named list&gt;
+## 1 2022-10-19 14:10:58 1.58e18 158270586634… &quot;Seit … FALSE       279 &lt;named list&gt;
+## 2 2022-10-20 15:18:00 1.58e18 158308512372… &quot;#Guet… FALSE       277 &lt;named list&gt;
+## 3 2022-10-20 15:17:53 1.58e18 158308509556… &quot;#RB61… FALSE       179 &lt;named list&gt;
+## 4 2022-10-20 15:09:22 1.58e18 158308295105… &quot;Hallo… FALSE       240 &lt;named list&gt;
+## 5 2022-10-20 15:02:16 1.58e18 158308116368… &quot;#RE82… FALSE       155 &lt;named list&gt;
+## 6 2022-10-20 15:00:01 1.58e18 158308059886… &quot;#RB61… FALSE       129 &lt;named list&gt;
 ## # … with 36 more variables: metadata &lt;list&gt;, source &lt;chr&gt;,
 ## #   in_reply_to_status_id &lt;dbl&gt;, in_reply_to_status_id_str &lt;chr&gt;,
 ## #   in_reply_to_user_id &lt;dbl&gt;, in_reply_to_user_id_str &lt;chr&gt;,
@@ -379,16 +379,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Inhalte der ersten 10 Tweets anzeigen</span></span>
 <span id="cb9-2"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb9-2" aria-hidden="true" tabindex="-1"></a>bielefeld_tweets<span class="sc">$</span>text[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>] </span></code></pre></div>
 </details>
-<pre><code>##  [1] &quot;Der @VfB verliert sicher nicht hoch gegen #Bielefeld\n#DFBPokal https://t.co/3CqxTMZ4fD&quot;                                                    
-##  [2] &quot;RT @balticfan89: Nicht nur #Bielefeld existiert wohl nicht, sondern diese Arminia ebenfalls nicht...\n#DFBPokal #VfBDSC&quot;                    
-##  [3] &quot;Nicht nur #Bielefeld existiert wohl nicht, sondern diese Arminia ebenfalls nicht...\n#DFBPokal #VfBDSC&quot;                                     
-##  [4] &quot;Ich wünsche allen Bielefeld Fans einen eine gute Heimreise und dass sie ihre Kosten erstattet bekommen #vfb #bielefeld #arminia #DFBPokal&quot;  
-##  [5] &quot;Quo vadis Arminia? Offenbarungseid und Bankrott-Erklärung…….\n#arminia #arminiabielefeld #dsc #bielefeld&quot;                                   
-##  [6] &quot;DSC arm, einfach arm #Bielefeld\n#VFBDSC&quot;                                                                                                   
-##  [7] &quot;Klar, es ist #Bielefeld, aber da musst Du auch erst mal 6 machen ...... #ForzaVfB #NurDerVfB #VfBDSC https://t.co/5SR6wegCvK&quot;               
-##  [8] &quot;RT @ARDKontraste: Seit fast 2 Jahren recherchieren wir zu einem unfassbaren Verbrechen in der #Bielefeld​er #Bethel-Klinik: Ein Assistenzar…&quot;
-##  [9] &quot;ffs Bielefeld warum tut ihr mir das nur an? 😭\n#VFBDSC #Bielefeld&quot;                                                                         
-## [10] &quot;Coacht #Kramer eigentlich heute #Bielefeld oder warum gehen die so unter? \n#VFB #Bielefeld #Bielefailed #S04 #TSGS04&quot;</code></pre>
+<pre><code>##  [1] &quot;Seit fast 2 Jahren recherchieren wir zu einem unfassbaren Verbrechen in der #Bielefeld​er #Bethel-Klinik: Ein Assistenzarzt betäubte und vergewaltigte rund 30 Patientinnen. Unsere Reportage dazu heute 22:15 im rbb Fernsehen, jetzt schon in der Mediathek:\n\nhttps://t.co/gH1QibgmiX https://t.co/PQRhhR6bKx&quot;
+##  [2] &quot;#Guetersloh #Bielefeld #Osnabrueck @RadioGuetersloh @RadioBielefeld @nwnews @westfalenblatt #HalleWestfalen #Wub \nIch freue mich drauf, mit euch zusammen zu essen und zu lachen! Lesung am 29.10. im Café Altes Pfarrhaus in Halle Westf. Reservierung hier: https://t.co/JCyT2zh5xf https://t.co/a1slLaBtgr&quot;  
+##  [3] &quot;#RB61 #Hengelo - #Bielefeld Hbf | Verspätungen | von Wissingen bis Bielefeld Hbf | Technische Störung an der Strecke | Störung von 15:15 bis vsl. 16:00 Uhr https://t.co/Z8Er2H7m3I&quot;                                                                                                                             
+##  [4] &quot;Hallo Ostwestfalen! \nAm Sonntag, den 30.11., bin ich ins Bauernhausmuseum nach #Bielefeld eingeladen. Ich freue mich sehr auf Vortrag &amp;amp; Diskussion über #Biodiversität in meiner alten Heimat OWL.\nKommt zahlreich!\n\nhttps://t.co/nEFpHUdHC0&quot;                                                            
+##  [5] &quot;#RE82 #Bielefeld Hbf - #Altenbeken | Verspätungen | von Altenbeken bis Altenbeken | Zugfolge | Störung von 15:01 bis vsl. 15:09 Uhr https://t.co/Z8Er2H7m3I&quot;                                                                                                                                                     
+##  [6] &quot;#RB61 #Hengelo 15:34 nach #Bielefeld Hbf 17:48 #Teilausfall von #Hengelo bis Oldenzaal aufgrund eines nicht NL-fähigen Fahrzeugs.&quot;                                                                                                                                                                               
+##  [7] &quot;RT @eurobahn_info: #RE78 #Nienburg (Weser) - #Bielefeld Hbf (beide Ri.) | Zugausfälle | von Nienburg (Weser) bis Bielefeld Hbf (beide Ri.)…&quot;                                                                                                                                                                     
+##  [8] &quot;#RE78 #Nienburg (Weser) - #Bielefeld Hbf (beide Ri.) | Zugausfälle | von Nienburg (Weser) bis Bielefeld Hbf (beide Ri.) | Kurzfristiger Personalausfall | Störung von 19:24 bis vsl. 01:05 Uhr https://t.co/Z8Er2Hop5I&quot;                                                                                          
+##  [9] &quot;Revenge😈 #VfB #vfbstuttgart #bielefeld https://t.co/jt3OQKaK9M&quot;                                                                                                                                                                                                                                                 
+## [10] &quot;RT @ZuginfoNRW: #RE78 #Zugausfall #Bielefeld Hbf 15:24 - #Nienburg (Weser) 16:49. Aufgrund eines kurzfristigen Personalausfalls.&quot;</code></pre>
 <p>So sieht der Output aus, wenn die Authentifikation und die Suche geklappt haben.</p>
 </div>
 <div id="abspeichern" class="section level3 hasAnchor" number="6.2.5">
@@ -400,7 +400,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 <pre><code>## Saving auth to &#39;/Users/q.t./Library/Preferences/org.R-project.R/R/rtweet/Meine
 ## App.rds&#39;</code></pre>
-<p>Wenn wir in der nächsten Session die Twitter API benutzen möchten, rufen wir folgenden Befehl mit dem selbstbestimmten Namen”Meine App” für die Authentifizierung auf.</p>
+<p>Wenn wir in der nächsten Session die Twitter API benutzen möchten, rufen wir folgenden Befehl mit dem selbstbestimmten Namen “Meine App” für die Authentifizierung auf.</p>
 <details class=chunk-details open><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">auth_as</span>(<span class="st">&quot;Meine App&quot;</span>)</span></code></pre></div>
 </details>
@@ -408,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="fingerübung" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Fingerübung<a href="erste-lerneinheit---twitter-authentifizierung-erste-analysen.html#fingerübung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Arbeite folgende Übungen mithilfe der rtweet Dokumentation durch [(Link)]. Hierbei ist das Ziel sich mit den Werkzeugen vertraut zu mahen. (<a href="https://docs.ropensci.org/rtweet/articles/rtweet.html#get-friends" class="uri">https://docs.ropensci.org/rtweet/articles/rtweet.html#get-friends</a>)</p>
+<p>Arbeite folgende Übungen mithilfe der rtweet Dokumentation durch: <a href="https://docs.ropensci.org/rtweet/articles/rtweet.html">Link</a>. Hierbei ist das Ziel sich mit den Werkzeugen vertraut zu mahen.</p>
 <div class="task-box task-img">
 <ol style="list-style-type: decimal">
 <li><p>Suche nach dem Hashtag “micropeotry” und speicher die Ergebnisse ab.</p></li>
